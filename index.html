@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grongus Alerts Hub</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.5;
+      background: #000000;
+      color: #222;
+    }
+    h1 {
+      color: #00ff59;
+      border-bottom: 3px solid #00aecc;
+      padding-bottom: 8px;
+    }
+    .alert {
+      background: white;
+      border-left: 5px solid #00aecc;
+      margin: 20px 0;
+      padding: 16px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .alert h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.15rem;
+    }
+    .alert a {
+      color: #d88a16;
+      text-decoration: none;
+    }
+    .alert a:hover {
+      text-decoration: underline;
+    }
+    .meta {
+      font-size: 0.9rem;
+      color: #b5b1b1;
+      margin-bottom: 8px;
+    }
+    .description {
+      margin: 0;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #666;
+      text-align: center;
+    }
+    #loading {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    .error {
+      background: #fff0f0;
+      border-left-color: #c00;
+      color: #900;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Grongus ASD Alerts feed</h1>
+  <p>Live feed from the official Australian Cyber Security Centre.</p>
+
+  <div id="loading">Loading alerts…</div>
+  <div id="feed"></div>
+
+  <script>
+    // Official ACSC Alerts RSS
+    const RSS_URL = "https://www.cyber.gov.au/rss/alerts";
+
+    // Free CORS proxy so the browser can fetch the feed
+    const PROXY = "https://api.allorigins.win/raw?url=";
+
+async function loadFeed() {
+      const feedDiv = document.getElementById("feed");
+      const loading = document.getElementById("loading");
+
+try {
+        const response = await fetch(PROXY + encodeURIComponent(RSS_URL));
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, "text/xml");
+
+        const items = xml.querySelectorAll("item");
+        if (items.length === 0) throw new Error("No items found in feed");
+
+        let html = "";
+        items.forEach(item => {
+          const title = item.querySelector("title")?.textContent || "No title";
+          const link = item.querySelector("link")?.textContent || "#";
+          const desc = item.querySelector("description")?.textContent || "";
+          const date = item.querySelector("pubDate")?.textContent || "";
+
+          // Make the date nicer
+          const niceDate = date ? new Date(date).toLocaleString("en-AU", {
+            dateStyle: "medium",
+            timeStyle: "short"
+          }) : "";
+
+          html += `
+            <div class="alert">
+              <h2><a href="${link}" target="_blank" rel="noopener">${title}</a></h2>
+              <div class="meta">${niceDate}</div>
+              <p class="description">${desc}</p>
+            </div>
+          `;
+        });
+
+        
+        feedDiv.innerHTML = html;
+        loading.style.display = "none";
+      } catch (err) {
+        loading.innerHTML = `<div class="alert error">
+          Could not load the feed. Try refreshing the page.<br>
+          Error: ${err.message}
+        </div>`;
+      }
+    }
+
+    // Run when the page loads
+    loadFeed();
+  </script>
+
+</body>
+
+<footer>
+    Data from <a href="https://www.cyber.gov.au/rss/alerts" target="_blank">cyber.gov.au/rss/alerts</a><br>
+    This is an unofficial mirror for convenience.
+  </footer>
