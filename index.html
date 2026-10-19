@@ -1,140 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grongus Alerts Hub</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.5;
-      background: #000000;
-      color: #222;
-    }
-    h1 {
-      color: #00ff59;
-      border-bottom: 3px solid #00aecc;
-      padding-bottom: 8px;
-    }
-    .alert {
-      background: white;
-      border-left: 5px solid #00aecc;
-      margin: 20px 0;
-      padding: 16px 20px;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-    .alert h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.15rem;
-    }
-    .alert a {
-      color: #d88a16;
-      text-decoration: none;
-    }
-    .alert a:hover {
-      text-decoration: underline;
-    }
-    .meta {
-      font-size: 0.9rem;
-      color: #b5b1b1;
-      margin-bottom: 8px;
-    }
-    .description {
-      margin: 0;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.85rem;
-      color: #666;
-      text-align: center;
-    }
-    #loading {
-      text-align: center;
-      padding: 40px;
-      color: #666;
-    }
-    .error {
-      background: #fff0f0;
-      border-left-color: #c00;
-      color: #900;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glorbus' Cyber Threat News</title>
+<meta name="description" content="Glorbus scours the internet for security threats so you can panic in pastel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-<h1>Grongus ASD Alerts feed</h1>
-  <p>Live feed from the official Australian Cyber Security Centre.</p>
+<div class="pool" aria-hidden="true">
+  <svg class="caus c1" width="100%" height="100%" preserveAspectRatio="none" focusable="false">
+    <filter id="w1" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.007 0.011" numOctaves="2" seed="4"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 1 0 0 0 0 0"/></feComponentTransfer>
+      <feGaussianBlur stdDeviation=".7"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#w1)"/>
+  </svg>
+  <svg class="caus c2" width="100%" height="100%" preserveAspectRatio="none" focusable="false">
+    <filter id="w2" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.011 0.008" numOctaves="2" seed="11"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 1 0 0 0 0 0"/></feComponentTransfer>
+      <feGaussianBlur stdDeviation=".7"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#w2)"/>
+  </svg>
+  <i class="glow"></i>
+</div>
+<header class="hero">
+  <h1>Glorbus' <span>Cyber Threat</span> News</h1>
 
-  <div id="loading">Loading alerts…</div>
-  <div id="feed"></div>
+  <div class="searchwrap">
+    <details class="info">
+      <summary><span aria-hidden="true">ⓘ</span> How search works</summary>
+      <div class="info-body">
+        <p>Type the name of any software or hardware, like <b>Chrome</b>, <b>Cisco</b> or <b>router</b>. Glorbus checks every headline, summary and tag in all the columns below and shows only the stories that match.</p>
+        <p>Matches are highlighted. Search updates as you type, and the severity buttons narrow the results further. It only searches the feed already loaded on this page, not the whole internet.</p>
+      </div>
+    </details>
 
-  <script>
-    // Official ACSC Alerts RSS
-    const RSS_URL = "https://www.cyber.gov.au/rss/alerts";
+    <form class="search" role="search" id="searchForm">
+      <label for="q" class="sr">Search software or hardware</label>
+      <input id="q" type="search" placeholder="Try: router, Chrome, Windows, Cisco…" autocomplete="off">
+      <button type="submit">Scan</button>
+    </form>
+  </div>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+</header>
 
-    // Free CORS proxy so the browser can fetch the feed
-    const PROXY = "https://api.allorigins.win/raw?url=";
-
-async function loadFeed() {
-      const feedDiv = document.getElementById("feed");
-      const loading = document.getElementById("loading");
-
-try {
-        const response = await fetch(PROXY + encodeURIComponent(RSS_URL));
-        if (!response.ok) throw new Error("Network response was not ok");
-
-        const text = await response.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, "text/xml");
-
-        const items = xml.querySelectorAll("item");
-        if (items.length === 0) throw new Error("No items found in feed");
-
-        let html = "";
-        items.forEach(item => {
-          const title = item.querySelector("title")?.textContent || "No title";
-          const link = item.querySelector("link")?.textContent || "#";
-          const desc = item.querySelector("description")?.textContent || "";
-          const date = item.querySelector("pubDate")?.textContent || "";
-
-          // Make the date nicer
-          const niceDate = date ? new Date(date).toLocaleString("en-AU", {
-            dateStyle: "medium",
-            timeStyle: "short"
-          }) : "";
-
-          html += `
-            <div class="alert">
-              <h2><a href="${link}" target="_blank" rel="noopener">${title}</a></h2>
-              <div class="meta">${niceDate}</div>
-              <p class="description">${desc}</p>
-            </div>
-          `;
-        });
-
-        
-        feedDiv.innerHTML = html;
-        loading.style.display = "none";
-      } catch (err) {
-        loading.innerHTML = `<div class="alert error">
-          Could not load the feed. Try refreshing the page.<br>
-          Error: ${err.message}
-        </div>`;
-      }
-    }
-
-    // Run when the page loads
-    loadFeed();
-  </script>
-
-</body>
+<main>
+  <div class="filters" id="filters" role="group" aria-label="Filter by severity">
+    <button data-sev="all" aria-pressed="true">All</button>
+    <button data-sev="critical" aria-pressed="false">Critical</button>
+    <button data-sev="high" aria-pressed="false">High</button>
+    <button data-sev="medium" aria-pressed="false">Medium</button>
+  </div>
+  <div class="columns" id="feed"></div>
+  <p class="empty" id="empty" hidden>Glorbus found nothing. Either you're safe, or Glorbus isn't looking hard enough. 🌴</p>
+</main>
 
 <footer>
-    Data from <a href="https://www.cyber.gov.au/rss/alerts" target="_blank">cyber.gov.au/rss/alerts</a><br>
-    This is an unofficial mirror for convenience.
-  </footer>
+  <p>ACSC Alerts comes from cyber.gov.au, saved by a scheduled job. Severity is estimated from keywords, since RSS doesn't provide it. Other columns are sample headlines.</p>
+  <p id="updated"></p>
+  <p>© Glorbus ∞ 1998 — stay patched.</p>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
