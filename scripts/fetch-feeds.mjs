@@ -7,14 +7,15 @@ import { promisify } from "node:util";
 
 const run = promisify(execFile);
 const SOURCES = [
-  { name: "ACSC Alerts", url: "https://www.cyber.gov.au/rss/alerts" },
+  { name: "CISA ICS Advisories", url: "https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml" },
+  { name: "ZDI Upcoming", url: "https://www.zerodayinitiative.com/rss/upcoming/" },
 ];
 const OUT = "feeds/feed.json";
 const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 const HEADERS = {
   "User-Agent": UA,
   "Accept": "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5",
-  "Accept-Language": "en-AU,en;q=0.9",
+  "Accept-Language": "en-US,en;q=0.9",
 };
 
 const decode = (s) => s
@@ -76,7 +77,9 @@ async function get(url) {
 let previous = { sources: {} };
 try { previous = JSON.parse(await readFile(OUT, "utf8")); } catch {}
 
-const sources = { ...previous.sources }; // keep the last good copy if a fetch fails
+// Keep the last good copy of current sources only (removed feeds are dropped).
+const sources = {};
+for (const s of SOURCES) if (previous.sources?.[s.name]) sources[s.name] = previous.sources[s.name];
 let ok = 0;
 for (const s of SOURCES) {
   console.log(`Fetching ${s.name}`);

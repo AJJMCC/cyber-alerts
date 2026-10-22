@@ -1,6 +1,6 @@
 // Live sources. Names must match the names in scripts/fetch-feeds.mjs.
 // A scheduled job saves each feed into feeds/feed.json; this page just reads that file.
-const LIVE=[{name:"ACSC Alerts"}];
+const LIVE=[{name:"CISA ICS Advisories"},{name:"ZDI Upcoming"}];
 const FEED_FILE="feeds/feed.json";
 // Sample sources, kept as placeholders until their real feeds are added.
 const SAMPLE_SOURCES=["Sample Wire","Demo Daily","Threat Pastel"];
