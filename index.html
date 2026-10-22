@@ -38,8 +38,8 @@
     <details class="info">
       <summary><span aria-hidden="true">ⓘ</span> How search works</summary>
       <div class="info-body">
-        <p>Type the name of any software or hardware, like <b>Chrome</b>, <b>Cisco</b> or <b>router</b>. Glorbus checks every headline, summary and tag in all the columns below and shows only the stories that match.</p>
-        <p>Matches are highlighted. Search updates as you type, and the severity buttons narrow the results further. It only searches the feed already loaded on this page, not the whole internet.</p>
+        <p>Type the name of any software or hardware, like <b>Chrome</b>, <b>Cisco</b> or <b>router</b>. Glorbus checks every headline, summary and tag in every feed and shows only the feeds that have matching stories.</p>
+        <p>Open a feed box to see its stories, with matches highlighted. Search updates as you type, and the severity buttons narrow the results further. It only searches the data already loaded on this page, not the whole internet.</p>
       </div>
     </details>
 
@@ -59,9 +59,20 @@
     <button data-sev="high" aria-pressed="false">High</button>
     <button data-sev="medium" aria-pressed="false">Medium</button>
   </div>
-  <div class="columns" id="feed"></div>
+  <div class="tiles" id="feed"></div>
   <p class="empty" id="empty" hidden>Glorbus found nothing. Either you're safe, or Glorbus isn't looking hard enough. 🌴</p>
 </main>
+
+<dialog id="dlg" aria-labelledby="dtitle">
+  <div class="dwrap">
+    <div class="dhead">
+      <div><h2 id="dtitle"></h2><p id="ddesc"></p></div>
+      <span id="dcount" class="dcount"></span>
+      <button type="button" id="dclose" aria-label="Close feed">✕</button>
+    </div>
+    <div class="dgrid" id="dgrid"></div>
+  </div>
+</dialog>
 
 <footer>
   <p>Feeds come from CISA, CERT/CC, the UK NCSC, CERT-EU, the Canadian Centre for Cyber Security, CVE.report, cvefeed.io, Kubernetes, Google News, Zero Day Initiative, Exploit-DB, Full Disclosure, Sploitus, VulDB and Fortinet (FortiGuard Labs and support), saved by a scheduled job. Severity is estimated from keywords, since RSS doesn't provide it.</p>

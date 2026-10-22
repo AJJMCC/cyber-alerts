@@ -1,15 +1,47 @@
 // Live sources. Names must match the names in scripts/fetch-feeds.mjs.
 // A scheduled job saves each feed into feeds/feed.json; this page just reads that file.
-const LIVE=["CISA ICS Advisories","CISA Cybersecurity Advisories","CERT/CC Vulnerability Notes","UK NCSC","CERT-EU",
-  "Canadian Cyber Centre","CVE.report",
-  "cvefeed.io Latest","cvefeed.io High & Critical","Kubernetes CVE Feed","Google News: CVE","ZDI Published",
-  "ZDI Upcoming","Exploit-DB","Full Disclosure","Sploitus","VulDB Recent",
-  "FortiGuard Outbreak Alerts","FortiGuard Threat Signal",
-  "Fortinet PSIRT Advisories","App Control Updates","Antispam Checksum Updates","Antispam URI Updates",
-  "Antispam IP Updates","Antivirus Updates","IPS Updates","Web Filtering Updates","FortiWeb Security Updates",
-  "Mobile AntiVirus Updates","Endpoint Vulnerability Updates","IP Reputation DB","Botnet Domain Reputation DB",
-  "Internet Services DB","OT Security Services","IoT Application Services","OT Application Services",
-  "OT IPS Services","Virtual Patching Updates","FortiDAST","Fortinet Firmware Updates"].map(name=>({name}));
+const LIVE=[
+ ["CISA ICS Advisories","US advisories for industrial control systems. Factories, pipes and power."],
+ ["CISA Cybersecurity Advisories","The US government's general security alerts and advisories."],
+ ["CERT/CC Vulnerability Notes","Carnegie Mellon's coordinated vulnerability write-ups."],
+ ["UK NCSC","Alerts and guidance from the UK's National Cyber Security Centre."],
+ ["CERT-EU","Security advisories from the EU institutions' response team."],
+ ["Canadian Cyber Centre","Alerts and advisories from Canada. Very polite, still alarming."],
+ ["CVE.report","A firehose of freshly published CVE entries."],
+ ["cvefeed.io Latest","The newest CVEs, as soon as they're published."],
+ ["cvefeed.io High & Critical","Only the high and critical CVEs. No small talk."],
+ ["Kubernetes CVE Feed","Official CVEs for Kubernetes. For anyone running containers."],
+ ["Google News: CVE","News headlines about CVEs and vulnerabilities."],
+ ["ZDI Published","Zero Day Initiative advisories that are now public."],
+ ["ZDI Upcoming","ZDI advisories still waiting for their big reveal."],
+ ["Exploit-DB","Newly published public exploits. Handle with oven gloves."],
+ ["Full Disclosure","The famously chatty security mailing list."],
+ ["Sploitus","Exploit and vulnerability search results, served fresh."],
+ ["VulDB Recent","Recent entries from the VulDB vulnerability database."],
+ ["FortiGuard Outbreak Alerts","Fortinet's alerts for fast-moving threats."],
+ ["FortiGuard Threat Signal","Fortinet's short threat briefings."],
+ ["Fortinet PSIRT Advisories","Security advisories for Fortinet's own products."],
+ ["App Control Updates","Application control signature updates."],
+ ["Antispam Checksum Updates","Antispam checksum database updates."],
+ ["Antispam URI Updates","Antispam URI database updates."],
+ ["Antispam IP Updates","Antispam IP database updates."],
+ ["Antivirus Updates","Antivirus signature database updates."],
+ ["IPS Updates","Intrusion prevention signature updates."],
+ ["Web Filtering Updates","Web filtering service updates."],
+ ["FortiWeb Security Updates","FortiWeb application security updates."],
+ ["Mobile AntiVirus Updates","Mobile antivirus service updates."],
+ ["Endpoint Vulnerability Updates","Endpoint vulnerability signature updates."],
+ ["IP Reputation DB","Updates to the IP reputation database."],
+ ["Botnet Domain Reputation DB","Updates to the botnet domain reputation database."],
+ ["Internet Services DB","Updates to the internet services database."],
+ ["OT Security Services","Operational technology security service updates."],
+ ["IoT Application Services","IoT application signature updates."],
+ ["OT Application Services","OT application signature updates."],
+ ["OT IPS Services","OT intrusion prevention updates."],
+ ["Virtual Patching Updates","FortiGuard virtual patching service updates."],
+ ["FortiDAST","Dynamic application security testing updates."],
+ ["Fortinet Firmware Updates","New firmware releases for Fortinet products."]
+].map(([name,desc])=>({name,desc}));
 const FEED_FILE="feeds/feed.json";
 const DAYS=30; // rolling window; keep in step with DAYS in the script
 const SOURCES=LIVE.map(l=>l.name);
@@ -21,7 +53,7 @@ const COLORS={critical:"var(--pink)",high:"var(--peach)",medium:"var(--sky)"};
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-let sev="all",query="";
+let sev="all",query="",openSrc=null;
 
 // Severity is guessed from keywords, since RSS has no severity field.
 const guessSev=t=>/critical|zero-day|actively exploited|ransomware|remote code/i.test(t)?"critical"
@@ -72,33 +104,57 @@ function card(i,terms){
   </article>`;
 }
 
+// Body of the pop-up window for one source.
+function dialogBody(s,items,terms){
+  if(items.length)return items.map(i=>card(i,terms)).join("");
+  const st=state[s];
+  return st==="loading"?`<p class="none">Fetching the latest… 🌊</p>`
+    :st==="error"?`<p class="none">No saved copy of this feed yet. <button class="retry" type="button">Retry</button> 🌴</p>`
+    :FEED.some(i=>i.src===s&&recent(i))?`<p class="none">Nothing here matches your search or filter. 🌊</p>`
+    :`<p class="none">Nothing in the last ${DAYS} days. Suspiciously quiet. 🌊</p>`;
+}
+
 function render(){
   const q=query.trim().toLowerCase();
   const terms=q.split(/\s+/).filter(Boolean).sort((a,b)=>b.length-a.length);
   const pool=FEED.filter(recent);
   const list=pool.filter(i=>(sev==="all"||i.sev===sev)&&
     terms.every(t=>[i.title,i.text,i.src,...i.tags].join(" ").toLowerCase().includes(t)));
-  $("feed").innerHTML=SOURCES.map(s=>{
-    const items=list.filter(i=>i.src===s);
-    const st=state[s];
-    let body=items.map(i=>card(i,terms)).join("");
-    if(!body){
-      body=st==="loading"?`<p class="none">Fetching the latest… 🌊</p>`
-        :st==="error"?`<p class="none">No saved copy of this feed yet. <button class="retry" type="button">Retry</button> 🌴</p>`
-        :`<p class="none">Nothing in the last ${DAYS} days. Suspiciously quiet. 🌊</p>`;
-    }
-    return `<section class="col" aria-label="${esc(s)}"><h2><span>${esc(s)}</span><small>${items.length}</small></h2>${body}</section>`;
+  const filtering=!!q||sev!=="all";
+  let shown=0;
+  $("feed").innerHTML=LIVE.map(l=>{
+    const n=list.filter(i=>i.src===l.name).length,st=state[l.name];
+    if(filtering&&!n&&st==="ok")return ""; // while searching, only show sources with matches
+    shown++;
+    const badge=st==="loading"?"…":st==="error"?"—":n;
+    return `<button type="button" class="tile${st==="error"?" off":""}" data-src="${esc(l.name)}" aria-haspopup="dialog">
+      <span class="th"><span>${esc(l.name)}</span><small>${badge}</small></span>
+      <span class="td">${esc(l.desc)}</span>
+      <span class="go">${st==="error"?"No saved copy yet":"Open feed ▸"}</span></button>`;
   }).join("");
+  if(openSrc){
+    const l=LIVE.find(x=>x.name===openSrc),items=list.filter(i=>i.src===openSrc);
+    $("dtitle").textContent=l.name;$("ddesc").textContent=l.desc;
+    $("dcount").textContent=items.length+(items.length===1?" item":" items");
+    $("dgrid").innerHTML=dialogBody(openSrc,items,terms);
+  }
   const loading=Object.values(state).includes("loading");
   $("empty").hidden=list.length>0||loading;
-  $("status").textContent=q?`${list.length} match${list.length===1?"":"es"} for “${query.trim()}”`:(loading?"":`${pool.length} threats on the radar in the last ${DAYS} days`);
+  $("status").textContent=q?`${list.length} match${list.length===1?"":"es"} for “${query.trim()}” in ${shown} feed${shown===1?"":"s"}`:(loading?"":`${pool.length} threats on the radar in the last ${DAYS} days`);
   const u=$("updated"),d=new Date(updated);
   if(u)u.textContent=isNaN(d)?"":`Showing the last ${DAYS} days. Live feeds last refreshed ${d.toLocaleString()}.`;
 }
 
+function openFeed(s){openSrc=s;render();const d=$("dlg");if(!d.open)d.showModal();$("dgrid").scrollTop=0;}
+
 $("searchForm").addEventListener("submit",e=>{e.preventDefault();query=$("q").value;render();});
 $("q").addEventListener("input",e=>{query=e.target.value;render();});
-$("feed").addEventListener("click",e=>{if(e.target.closest(".retry"))load();});
+$("feed").addEventListener("click",e=>{const t=e.target.closest(".tile");if(t)openFeed(t.dataset.src);});
+$("dlg").addEventListener("click",e=>{
+  if(e.target.closest(".retry"))return load();
+  if(e.target===$("dlg")||e.target.closest("#dclose"))$("dlg").close(); // backdrop or close button
+});
+$("dlg").addEventListener("close",()=>{openSrc=null;});
 $("filters").addEventListener("click",e=>{
   const b=e.target.closest("button");if(!b)return;
   sev=b.dataset.sev;
