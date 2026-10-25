@@ -44,7 +44,6 @@ const LIVE=[
 ].map(([name,desc])=>({name,desc}));
 const FEED_FILE="feeds/feed.json";
 const DAYS=30; // rolling window; keep in step with DAYS in the script
-const SOURCES=LIVE.map(l=>l.name);
 let FEED=[];
 const state={}; // per live source: "loading" | "ok" | "error"
 LIVE.forEach(l=>state[l.name]="loading");
@@ -53,9 +52,9 @@ const COLORS={critical:"var(--pink)",high:"var(--peach)",medium:"var(--sky)"};
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-let sev="all",query="",openSrc=null;
+let query="",openSrc=null;
 
-// Severity is guessed from keywords, since RSS has no severity field.
+// Severity is guessed from keywords (shown as a badge only), since RSS has no severity field.
 const guessSev=t=>/critical|zero-day|actively exploited|ransomware|remote code/i.test(t)?"critical"
   :/high|severe|vulnerabilit|exploit|patch|update/i.test(t)?"high":"medium";
 const strip=h=>String(h||"").replace(/<[^>]*>/g," ").replace(/&nbsp;/g," ").replace(/\s+/g," ").trim();
@@ -110,7 +109,7 @@ function dialogBody(s,items,terms){
   const st=state[s];
   return st==="loading"?`<p class="none">Fetching the latest… 🌊</p>`
     :st==="error"?`<p class="none">No saved copy of this feed yet. <button class="retry" type="button">Retry</button> 🌴</p>`
-    :FEED.some(i=>i.src===s&&recent(i))?`<p class="none">Nothing here matches your search or filter. 🌊</p>`
+    :FEED.some(i=>i.src===s&&recent(i))?`<p class="none">Nothing here matches your search. 🌊</p>`
     :`<p class="none">Nothing in the last ${DAYS} days. Suspiciously quiet. 🌊</p>`;
 }
 
@@ -118,13 +117,11 @@ function render(){
   const q=query.trim().toLowerCase();
   const terms=q.split(/\s+/).filter(Boolean).sort((a,b)=>b.length-a.length);
   const pool=FEED.filter(recent);
-  const list=pool.filter(i=>(sev==="all"||i.sev===sev)&&
-    terms.every(t=>[i.title,i.text,i.src,...i.tags].join(" ").toLowerCase().includes(t)));
-  const filtering=!!q||sev!=="all";
+  const list=pool.filter(i=>terms.every(t=>[i.title,i.text,i.src,...i.tags].join(" ").toLowerCase().includes(t)));
   let shown=0;
   $("feed").innerHTML=LIVE.map(l=>{
     const n=list.filter(i=>i.src===l.name).length,st=state[l.name];
-    if(filtering&&!n&&st==="ok")return ""; // while searching, only show sources with matches
+    if(q&&!n&&st==="ok")return ""; // while searching, only show sources with matches
     shown++;
     const badge=st==="loading"?"…":st==="error"?"—":n;
     return `<button type="button" class="tile${st==="error"?" off":""}" data-src="${esc(l.name)}" aria-haspopup="dialog">
@@ -155,11 +152,5 @@ $("dlg").addEventListener("click",e=>{
   if(e.target===$("dlg")||e.target.closest("#dclose"))$("dlg").close(); // backdrop or close button
 });
 $("dlg").addEventListener("close",()=>{openSrc=null;});
-$("filters").addEventListener("click",e=>{
-  const b=e.target.closest("button");if(!b)return;
-  sev=b.dataset.sev;
-  document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  render();
-});
 render();
 load();
