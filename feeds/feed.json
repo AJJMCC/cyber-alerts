@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T23:40:07.120Z",
+ "updated": "2026-10-25T04:21:43.637Z",
  "days": 30,
  "sources": {
   "CISA ICS Advisories": [
@@ -1135,6 +1135,54 @@
    }
   ],
   "CVE.report": [
+   {
+    "title": "CVE-2026-116004",
+    "link": "https://cve.report/CVE-2026-116004",
+    "description": "A security vulnerability has been detected in onyx-dot-app Onyx up to 5.0.0. Impacted is an unknown function of the file web/src/app/craft/components/output-panel/PreviewTab.tsx. The manipulation leads to cross site scripting. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "pubDate": "Sat, 24 Oct 2026 23:27:12 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
+   {
+    "title": "CVE-2026-116000",
+    "link": "https://cve.report/CVE-2026-116000",
+    "description": "A security flaw has been discovered in Zylon PrivateGPT 1.0.0/1.0.1. This vulnerability affects the function load_file_from_uri of the file private_gpt/server/ingest/uri_loader.py of the component URI Artifact Loader. Performing a manipulation of the argument Value results in server-side request forgery. It is possible to initiate the attack remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "pubDate": "Sat, 24 Oct 2026 23:27:12 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
+   {
+    "title": "CVE-2026-115999",
+    "link": "https://cve.report/CVE-2026-115999",
+    "description": "A vulnerability has been found in mansi-k Restaurant_IMS d7ad49f61ab7cc1ec6eb359ac2b5378bdbde0694. Affected is the function mysqli_connect of the file lsmodal.php. The manipulation of the argument login_id/epsw leads to sql injection. Remote exploitation of the attack is possible. This product follows a rolling release approach for continuous delivery, so version details for affected or updated releases are not provided. The vendor was contacted early about this disclosure but did not respond in any way.",
+    "pubDate": "Sat, 24 Oct 2026 22:27:10 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
+   {
+    "title": "CVE-2026-115557",
+    "link": "https://cve.report/CVE-2026-115557",
+    "description": "Python has added a denylist for known compromised certificates to the &quot;ssl&quot; module to ensure user safety even without certificate revocation configured. Known compromised certificates will automatically be rejected regardless of the SSLContext policy configuration.",
+    "pubDate": "Sat, 24 Oct 2026 21:27:09 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
+   {
+    "title": "CVE-2025-60493",
+    "link": "https://cve.report/CVE-2025-60493",
+    "description": "A segmentation violation in the check_media_profile function (/mp4box/mp4box.c) of GPAC Project/MP4Box before 2.5 allows attackers to cause a Denial of Service (DoS) via supplying a crafted MP4 file.",
+    "pubDate": "Sat, 24 Oct 2026 21:27:09 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
+   {
+    "title": "CVE-2026-115997",
+    "link": "https://cve.report/CVE-2026-115997",
+    "description": "A flaw has been found in pig-mesh pig up to 4.1.0. This impacts the function orderItem.getColumn of the file pig-common/pig-common-data/src/main/java/com/pig4cloud/pig/common/data/resolver/SqlFilterArgumentResolver.java. Executing a manipulation of the argument ascs/descs can lead to sql injection. The attack may be launched remotely. The exploit has been published and may be used. Upgrading to version 4.1.1 will fix this issue. This patch is called 9b6311161e346d7626c81d993044072fed2dca07. It is suggested to upgrade the affected component. The vendor was contacted early about this disclosure.",
+    "pubDate": "Sat, 24 Oct 2026 20:27:07 EDT",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.448Z"
+   },
    {
     "title": "CVE-2026-115996",
     "link": "https://cve.report/CVE-2026-115996",
@@ -2286,85 +2334,69 @@
     "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
     "categories": [],
     "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-51380",
-    "link": "https://cve.report/CVE-2026-51380",
-    "description": "Buffer Overflow vulnerability in Tenda AC10 v3 (firmware V03.03.16.09) allows attackers to cause a permanent Denial of Service (DoS) or potentially execute remote code via the /cgi-bin/UploadCfg endpoint",
-    "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-49353",
-    "link": "https://cve.report/CVE-2026-49353",
-    "description": "9Router is an AI router &amp; token saver. In 0.4.45 and earlier, 9Router's src/dashboardGuard.js local-only access gate used Host and Origin headers in isLocalRequest() to protect /api/mcp/*, /api/tunnel/*, and /api/cli-tools/*, allowing header spoofing in reverse proxy or tunnel deployments to reach MCP child process stdin paths.",
-    "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-49352",
-    "link": "https://cve.report/CVE-2026-49352",
-    "description": "9Router is an AI router &amp; token saver. From 0.2.21 until 0.4.44, 9Router used the hardcoded fallback JWT secret 9router-default-secret-change-me in src/app/api/auth/login/route.js, src/middleware.js, and later src/lib/auth/dashboardSession.js, allowing attackers to forge an auth_token cookie when JWT_SECRET was unset. This issue is fixed in version 0.4.44",
-    "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-36590",
-    "link": "https://cve.report/CVE-2026-36590",
-    "description": "An issue in EMQ NanoMQ v.0.24.9 allows a remote attacker to cause a denial of service via the nni_qos_db_set function in broker_tcp.c component",
-    "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-15921",
-    "link": "https://cve.report/CVE-2026-15921",
-    "description": "Node Version Manager (nvm) is a POSIX-compliant shell function for managing multiple node.js versions. In versions 0.32.1 through 0.40.5, `nvm ls-remote` (and other commands that refresh remote LTS aliases, such as `nvm install --lts`) parse the node.js mirror's `index.tab` and use each release's LTS codename field as an alias filename without validating it. A malicious, compromised, or man-in-the-middled mirror can return an LTS codename containing path-traversal sequences such as `../../../.bashrc`, causing nvm to write the associated version string to a path outside `$NVM_DIR/alias`. With the default layout (`$NVM_DIR` is `~/.nvm`), this can create or overwrite files in the user's home directory, including shell startup files, which can lead to code execution in a later shell session. Exploitation requires the victim to use a hostile mirror -- via a compromised mirror or CDN, a network man-in-the-middle, or a maliciously configured `NVM_NODEJS_ORG_MIRROR`/`NVM_IOJS_ORG_MIRROR` -- and to run an affected command. Version 0.40.6 validates remote LTS codenames as safe alias filenames and rejects `..` path components when writing alias files.",
-    "pubDate": "Sat, 24 Oct 2026 17:11:21 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
-   },
-   {
-    "title": "CVE-2026-52870",
-    "link": "https://cve.report/CVE-2026-52870",
-    "description": "The MCP Python SDK, called mcp on PyPI, is a Python implementation of the Model Context Protocol (MCP). From 1.23.0 until 1.27.2, default handlers installed by server.experimental.enable_tasks() for tasks/list, tasks/get, tasks/result, and tasks/cancel operate only on task identifiers without recording the session that created each task, allowing any connected client to enumerate, read results from, consume messages for, or cancel other clients' tasks. This issue is fixed in version 1.27.2.",
-    "pubDate": "Sat, 24 Oct 2026 17:11:20 EDT",
-    "categories": [],
-    "firstSeen": "2026-10-24T21:29:55.854Z"
    }
   ],
   "cvefeed.io Latest": [
    {
-    "title": "CVE-2026-111326",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-111326",
-    "description": "<strong>CVE ID :</strong>CVE-2026-111326\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:18 p.m. | 15 minutes ago\n  <br />\n  <strong>Description :</strong>None\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Sat, 24 Oct 2026 22:18:59 +0000",
+    "title": "CVE-2026-115999 - mansi-k Restaurant_IMS lsmodal.php mysqli_connect sql injection",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115999",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115999\n  <br />\n  <strong>Published :</strong> Oct. 25, 2026, 2:16 a.m. | 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability has been found in mansi-k Restaurant_IMS d7ad49f61ab7cc1ec6eb359ac2b5378bdbde0694. Affected is the function mysqli_connect of the file lsmodal.php. The manipulation of the argument login_id/epsw leads to sql injection. Remote exploitation of the attack is possible. This product follows a rolling release approach for continuous delivery, so version details for affected or updated releases are not provided. The vendor was contacted early about this disclosure but did not respond in any way.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sun, 25 Oct 2026 02:16:26 +0000",
     "categories": [],
-    "firstSeen": "2026-10-24T23:40:03.608Z"
+    "firstSeen": "2026-10-25T04:21:41.200Z"
    },
    {
-    "title": "CVE-2026-109111",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-109111",
-    "description": "<strong>CVE ID :</strong>CVE-2026-109111\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:18 p.m. | 15 minutes ago\n  <br />\n  <strong>Description :</strong>None\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Sat, 24 Oct 2026 22:18:59 +0000",
+    "title": "CVE-2026-115997 - pig-mesh pig SqlFilterArgumentResolver.java orderItem.getColumn sql injection",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115997",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115997\n  <br />\n  <strong>Published :</strong> Oct. 25, 2026, 12:16 a.m. | 2 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A flaw has been found in pig-mesh pig up to 4.1.0. This impacts the function orderItem.getColumn of the file pig-common/pig-common-data/src/main/java/com/pig4cloud/pig/common/data/resolver/SqlFilterArgumentResolver.java. Executing a manipulation of the argument ascs/descs can lead to sql injection. The attack may be launched remotely. The exploit has been published and may be used. Upgrading to version 4.1.1 will fix this issue. This patch is called 9b6311161e346d7626c81d993044072fed2dca07. It is suggested to upgrade the affected component. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 6.5 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sun, 25 Oct 2026 00:16:45 +0000",
     "categories": [],
-    "firstSeen": "2026-10-24T23:40:03.608Z"
+    "firstSeen": "2026-10-25T04:21:41.200Z"
    },
    {
-    "title": "CVE-2026-89284",
+    "title": "CVE-2026-89284 - Rejected reason: This CVE ID has been rejected or",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-89284",
-    "description": "<strong>CVE ID :</strong>CVE-2026-89284\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:18 p.m. | 15 minutes ago\n  <br />\n  <strong>Description :</strong>None\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Sat, 24 Oct 2026 22:18:59 +0000",
+    "description": "<strong>CVE ID :</strong>CVE-2026-89284\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:59 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-24T23:40:03.608Z"
+   },
+   {
+    "title": "CVE-2026-111326 - Rejected reason: This CVE ID has been rejected or",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-111326",
+    "description": "<strong>CVE ID :</strong>CVE-2026-111326\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:58 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-24T23:40:03.608Z"
+   },
+   {
+    "title": "CVE-2026-115995 - Unitree Robotics Unitree Go2 chat_go gpt_thread.py set_volume os command injection",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115995",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115995\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A security vulnerability has been detected in Unitree Robotics Unitree Go2 up to 1.1.11.4. The impacted element is the function set_volume of the file gpt_thread.py of the component chat_go. Such manipulation of the argument Value leads to os command injection. The attack can be launched remotely. Upgrading to version 1.1.11.5 is sufficient to resolve this issue. You should upgrade the affected component. The vendor confirmed early: \"Submission 990502 corresponds to our internal ticket #474 (Go2 chat_go set_volume OS command injection, CWE-78).\"\n  <br />\n  <strong>Severity:</strong> 10.0 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:58 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-24T23:40:03.608Z"
+   },
+   {
+    "title": "CVE-2026-115996 - Unitree Robotics Unitree Go2 chat_go websocket.py WebSocketClient.connect certificate validation",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115996",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115996\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was detected in Unitree Robotics Unitree Go2 up to 1.1.13/1.1.14.1/1.1.15.1. This affects the function WebSocketClient.connect of the file websocket.py of the component chat_go. Performing a manipulation results in improper certificate validation. The attack may be initiated remotely. The attack's complexity is rated as high. The exploitability is reported as difficult. The vendor confirmed early: \"These issues were previously submitted by the researcher through our Security Response Center platform and are tracked internally as follows: Submission 990504 corresponds to our internal ticket #616 (Go2 chat_go WSS client disabled TLS server certificate validation, CWE-295).\"\n  <br />\n  <strong>Severity:</strong> 6.3 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:58 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.200Z"
+   },
+   {
+    "title": "CVE-2026-109111 - Rejected reason: This CVE ID has been rejected or",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-109111",
+    "description": "<strong>CVE ID :</strong>CVE-2026-109111\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority.\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:57 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T23:40:03.608Z"
    },
    {
     "title": "CVE-2026-115982 - phpIPAM Rack Link Creation show-rack-popup.php create_rack_link cross site scripting",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115982",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115982\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:16 p.m. | 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was detected in phpIPAM up to 1.8.3. Affected by this issue is the function create_rack_link of the file app/tools/racks/show-rack-popup.php of the component Rack Link Creation. Performing a manipulation of the argument deviceid results in cross site scripting. Remote exploitation of the attack is possible. The exploit is now public and may be used. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 5.0 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115982\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:16 p.m. | 4 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was detected in phpIPAM up to 1.8.3. Affected by this issue is the function create_rack_link of the file app/tools/racks/show-rack-popup.php of the component Rack Link Creation. Performing a manipulation of the argument deviceid results in cross site scripting. Remote exploitation of the attack is possible. The exploit is now public and may be used. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 5.0 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 22:16:27 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T23:40:03.608Z"
@@ -2372,23 +2404,15 @@
    {
     "title": "CVE-2026-115981 - phpIPAM index.php cross site scripting",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115981",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115981\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:16 p.m. | 17 minutes ago\n  <br />\n  <strong>Description :</strong>A security vulnerability has been detected in phpIPAM up to 1.8.3. Affected by this vulnerability is an unknown functionality of the file upgrade/index.php. Such manipulation of the argument REQUEST_URI leads to cross site scripting. The attack may be launched remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 3.3 | LOW\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115981\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:16 p.m. | 4 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A security vulnerability has been detected in phpIPAM up to 1.8.3. Affected by this vulnerability is an unknown functionality of the file upgrade/index.php. Such manipulation of the argument REQUEST_URI leads to cross site scripting. The attack may be launched remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 3.3 | LOW\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 22:16:27 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T23:40:03.608Z"
-   },
-   {
-    "title": "CVE-2026-115995 - Unitree Robotics Unitree Go2 chat_go gpt_thread.py set_volume os command injection",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115995",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115995\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 10:15 p.m. | 18 minutes ago\n  <br />\n  <strong>Description :</strong>A security vulnerability has been detected in Unitree Robotics Unitree Go2 up to 1.1.11.4. The impacted element is the function set_volume of the file gpt_thread.py of the component chat_go. Such manipulation of the argument Value leads to os command injection. The attack can be launched remotely. Upgrading to version 1.1.11.5 is sufficient to resolve this issue. You should upgrade the affected component. The vendor confirmed early: \"Submission 990502 corresponds to our internal ticket #474 (Go2 chat_go set_volume OS command injection, CWE-78).\"\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Sat, 24 Oct 2026 22:15:15 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T23:40:03.608Z"
    },
    {
     "title": "CVE-2026-115973 - FaveoSuite Faveo Helpdesk ForgotPasswordController.php reset password recovery",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115973",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115973\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was identified in FaveoSuite Faveo Helpdesk 2.0.3. Affected by this issue is the function ForgotPasswordController::sendResetLinkEmail/PasswordController::reset of the file app/Http/Controllers/Auth/ForgotPasswordController.php. The manipulation leads to weak password recovery. The attack may be initiated remotely. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115973\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 7 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was identified in FaveoSuite Faveo Helpdesk 2.0.3. Affected by this issue is the function ForgotPasswordController::sendResetLinkEmail/PasswordController::reset of the file app/Http/Controllers/Auth/ForgotPasswordController.php. The manipulation leads to weak password recovery. The attack may be initiated remotely. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 19:17:04 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T21:29:55.501Z"
@@ -2396,7 +2420,7 @@
    {
     "title": "CVE-2026-114820 - Vulnerability in the Oracle Java SE, Oracle GraalV",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114820",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114820\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 3 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511-b32, 8u511-perf-b32, 11.0.33.0.2, 17.0.21.0.2, 21.0.13.0.2, 25.0.5.0.2, 27.0.1.0.2; Oracle GraalVM for JDK: 17.0.21.0.2 and  21.0.13.0.2; Oracle GraalVM Enterprise Edition: 21.3.20.0.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data as well as  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).\n  <br />\n  <strong>Severity:</strong> 9.1 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114820\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 7 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511-b32, 8u511-perf-b32, 11.0.33.0.2, 17.0.21.0.2, 21.0.13.0.2, 25.0.5.0.2, 27.0.1.0.2; Oracle GraalVM for JDK: 17.0.21.0.2 and  21.0.13.0.2; Oracle GraalVM Enterprise Edition: 21.3.20.0.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data as well as  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).\n  <br />\n  <strong>Severity:</strong> 9.1 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 19:17:04 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T21:29:55.501Z"
@@ -2404,7 +2428,7 @@
    {
     "title": "CVE-2026-115972 - FaveoSuite Faveo Helpdesk UnAuthController.php UnAuthController.resolve authorization",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115972",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115972\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 4 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was determined in FaveoSuite Faveo Helpdesk up to 2.0.3. Affected by this vulnerability is the function UnAuthController.changeStatus/UnAuthController.close/UnAuthController.open/UnAuthController.resolve of the file app/Http/Controllers/Client/helpdesk/UnAuthController.php. Executing a manipulation of the argument id/status can lead to missing authorization. The attack can be launched remotely. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 6.9 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115972\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was determined in FaveoSuite Faveo Helpdesk up to 2.0.3. Affected by this vulnerability is the function UnAuthController.changeStatus/UnAuthController.close/UnAuthController.open/UnAuthController.resolve of the file app/Http/Controllers/Client/helpdesk/UnAuthController.php. Executing a manipulation of the argument id/status can lead to missing authorization. The attack can be launched remotely. The vendor was contacted early about this disclosure.\n  <br />\n  <strong>Severity:</strong> 6.9 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 18:16:48 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T18:56:25.114Z"
@@ -2412,7 +2436,7 @@
    {
     "title": "CVE-2026-115971 - Travisun Opptrix preParsing handler webhook Buffer.concat denial of service",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115971",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115971\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 4 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was found in Travisun Opptrix 0.4.0. Affected is the function Buffer.concat of the file /api/channels/webhook/ of the component preParsing handler. Performing a manipulation results in denial of service. The attack can be initiated remotely. The exploit has been made public and could be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 5.5 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115971\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability was found in Travisun Opptrix 0.4.0. Affected is the function Buffer.concat of the file /api/channels/webhook/ of the component preParsing handler. Performing a manipulation results in denial of service. The attack can be initiated remotely. The exploit has been made public and could be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 5.5 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 18:16:48 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T18:56:25.114Z"
@@ -2420,7 +2444,7 @@
    {
     "title": "CVE-2026-115970 - Travisun Opptrix Import Endpoint import code injection",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115970",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115970\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 4 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability has been found in Travisun Opptrix 0.4.0. This impacts an unknown function of the file /api/system-update/import of the component Import Endpoint. Such manipulation leads to code injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115970\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A vulnerability has been found in Travisun Opptrix 0.4.0. This impacts an unknown function of the file /api/system-update/import of the component Import Endpoint. Such manipulation leads to code injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 18:16:48 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T18:56:25.114Z"
@@ -2428,7 +2452,7 @@
    {
     "title": "CVE-2026-115969 - Travisun Opptrix Schedule API setup command injection",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115969",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115969\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 4:16 p.m. | 6 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A flaw has been found in Travisun Opptrix 0.4.0. This affects an unknown function of the file /api/auth/setup of the component Schedule API. This manipulation causes command injection. It is possible to initiate the attack remotely. The exploit has been published and may be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115969\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 4:16 p.m. | 10 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>A flaw has been found in Travisun Opptrix 0.4.0. This affects an unknown function of the file /api/auth/setup of the component Schedule API. This manipulation causes command injection. It is possible to initiate the attack remotely. The exploit has been published and may be used. The project has been completely taken offline and deprecated. The project maintainer explains: \"The mentioned security risk was a design flaw that manifested primarily in local environments during earlier stages of version development. We previously addressed and resolved this specific risk; however, because the project was restricted to a small learning scope and the main versions were intended to run exclusively on localhost, the security fix was only pushed directly to our GitHub repository before it went private.\" This vulnerability only affects products that are no longer supported by the maintainer.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 16:16:25 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T18:56:25.114Z"
@@ -2436,7 +2460,7 @@
    {
     "title": "CVE-2026-115933 - Forged signed tokens let any registered user take over other users and organizations",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115933",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115933\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 7 hours, 16 minutes ago\n  <br />\n  <strong>Description :</strong>Postiz signs its session, invitation and password reset tokens with one shared secret and without any marker of what a token is for. A route that refreshes the credentials of a browser-extension channel signed data taken from the request itself and stored the result where the requesting user can read it back. A user could therefore obtain a validly signed token containing any claims they choose, which the application accepts as a session, as an organization invitation with a chosen role, as a password reset or as an enterprise provisioning token.\n\nA second, narrower route that creates team invitations signs extra fields from the request body in the same way.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115933\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 11 hours, 16 minutes ago\n  <br />\n  <strong>Description :</strong>Postiz signs its session, invitation and password reset tokens with one shared secret and without any marker of what a token is for. A route that refreshes the credentials of a browser-extension channel signed data taken from the request itself and stored the result where the requesting user can read it back. A user could therefore obtain a validly signed token containing any claims they choose, which the application accepts as a session, as an organization invitation with a chosen role, as a password reset or as an enterprise provisioning token.\n\nA second, narrower route that creates team invitations signs extra fields from the request body in the same way.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 15:17:33 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2444,7 +2468,7 @@
    {
     "title": "CVE-2026-115557 - Distrust compromised intermediate certificates in ssl module",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115557",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115557\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 7 hours, 16 minutes ago\n  <br />\n  <strong>Description :</strong>Python has added a denylist for known compromised certificates to the \"ssl\" module to ensure user safety even without certificate revocation configured. Known compromised certificates will automatically be rejected regardless of the SSLContext policy configuration.\n  <br />\n  <strong>Severity:</strong> 9.4 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115557\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 11 hours, 16 minutes ago\n  <br />\n  <strong>Description :</strong>Python has added a denylist for known compromised certificates to the \"ssl\" module to ensure user safety even without certificate revocation configured. Known compromised certificates will automatically be rejected regardless of the SSLContext policy configuration.\n  <br />\n  <strong>Severity:</strong> 9.4 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 15:17:33 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2452,7 +2476,7 @@
    {
     "title": "CVE-2026-114704 - WordPress Relevanssi  plugin <= 4.28.4 - PHP Object Injection vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114704",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114704\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in Christoph Vielgrader Relevanssi  relevanssi allows Object Injection.This issue affects Relevanssi : from n/a through 4.28.4.\n  <br />\n  <strong>Severity:</strong> 7.2 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114704\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 12 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in Christoph Vielgrader Relevanssi  relevanssi allows Object Injection.This issue affects Relevanssi : from n/a through 4.28.4.\n  <br />\n  <strong>Severity:</strong> 7.2 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 14:16:39 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2460,7 +2484,7 @@
    {
     "title": "CVE-2026-114629 - Web::Simple versions before 0.035 for Perl allocate a buffer sized by the Content-Length header for urlencoded body parameters",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114629",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114629\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Web::Simple versions before 0.035 for Perl allocate a buffer sized by the Content-Length header for urlencoded body parameters.\n\nWeb::Dispatch::ParamParser::get_unpacked_body_from reads an application/x-www-form-urlencoded body using a single read call, with no cap and the return value ignored. Perl's read grows the buffer to the requested length before reading, so the declared Content-Length determines the allocation.\n\nAn attacker can trigger this through any route whose dispatch specification has a % body-parameter match, such as sub (POST + %name=), sending a Content-Length far larger than the body actually sent. No authentication is involved.\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114629\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 12 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Web::Simple versions before 0.035 for Perl allocate a buffer sized by the Content-Length header for urlencoded body parameters.\n\nWeb::Dispatch::ParamParser::get_unpacked_body_from reads an application/x-www-form-urlencoded body using a single read call, with no cap and the return value ignored. Perl's read grows the buffer to the requested length before reading, so the declared Content-Length determines the allocation.\n\nAn attacker can trigger this through any route whose dispatch specification has a % body-parameter match, such as sub (POST + %name=), sending a Content-Length far larger than the body actually sent. No authentication is involved.\n  <br />\n  <strong>Severity:</strong> 0.0 | NA\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 14:16:39 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2468,7 +2492,7 @@
    {
     "title": "CVE-2026-114192 - WordPress WpEvently plugin <= 5.7.8 - Broken Access Control vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114192",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114192\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Missing Authorization vulnerability in Magepeople inc. WpEvently mage-eventpress allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WpEvently: from n/a through 5.7.8.\n  <br />\n  <strong>Severity:</strong> 6.5 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114192\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 12 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Missing Authorization vulnerability in Magepeople inc. WpEvently mage-eventpress allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WpEvently: from n/a through 5.7.8.\n  <br />\n  <strong>Severity:</strong> 6.5 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 14:16:39 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2476,7 +2500,7 @@
    {
     "title": "CVE-2026-114191 - WordPress UPI QR Code Payment Gateway for WooCommerce plugin <= 1.6.3 - Broken Access Control vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114191",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114191\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 8 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Missing Authorization vulnerability in Knit Pay UPI QR Code Payment Gateway for WooCommerce upi-qr-code-payment-for-woocommerce allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects UPI QR Code Payment Gateway for WooCommerce: from n/a through 1.6.3.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114191\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 2:16 p.m. | 12 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Missing Authorization vulnerability in Knit Pay UPI QR Code Payment Gateway for WooCommerce upi-qr-code-payment-for-woocommerce allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects UPI QR Code Payment Gateway for WooCommerce: from n/a through 1.6.3.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 14:16:38 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2484,7 +2508,7 @@
    {
     "title": "CVE-2026-115932 - Path traversal in post media lets any registered user read server files",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115932",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115932\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 1:16 p.m. | 9 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>When a post is published, Postiz treats a media path that is not a web address as a file on the server's disk, but it does not check that the file lies inside the upload directory. A registered user can store a crafted media path with a post, get it past the checks that normally restrict it, and have the publishing worker read an arbitrary file and send it as an attachment to a Discord server the user controls.\n\nThe same unconfined reads can be reached through two further routes. One tells the caller whether a file exists and can exhaust the backend's memory, the other delivers the file the same way as the main route. Self-registration is open by default, so the attacker needs no existing account.\n  <br />\n  <strong>Severity:</strong> 9.6 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115932\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 1:16 p.m. | 13 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>When a post is published, Postiz treats a media path that is not a web address as a file on the server's disk, but it does not check that the file lies inside the upload directory. A registered user can store a crafted media path with a post, get it past the checks that normally restrict it, and have the publishing worker read an arbitrary file and send it as an attachment to a Discord server the user controls.\n\nThe same unconfined reads can be reached through two further routes. One tells the caller whether a file exists and can exhaust the backend's memory, the other delivers the file the same way as the main route. Self-registration is open by default, so the attacker needs no existing account.\n  <br />\n  <strong>Severity:</strong> 9.6 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 13:16:37 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2492,7 +2516,7 @@
    {
     "title": "CVE-2026-116020 - BookStack before 26.09.2 Incorrect Authorization via AttachmentController on Draft Pages",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116020",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116020\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>BookStack before 26.09.2 contains an incorrect authorization vulnerability in AttachmentController that allows authenticated users to access other users' draft page attachments by ID. Attackers with attachment permissions can enumerate sequential attachment IDs to download, rename, relink, or replace files on another user's unpublished draft pages.\n  <br />\n  <strong>Severity:</strong> 5.4 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116020\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 14 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>BookStack before 26.09.2 contains an incorrect authorization vulnerability in AttachmentController that allows authenticated users to access other users' draft page attachments by ID. Attackers with attachment permissions can enumerate sequential attachment IDs to download, rename, relink, or replace files on another user's unpublished draft pages.\n  <br />\n  <strong>Severity:</strong> 5.4 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2500,7 +2524,7 @@
    {
     "title": "CVE-2026-116019 - Grav 2.0.15 before 2.2.13 Allowlist Bypass via Flex Form Override Directives",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116019",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116019\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Grav 2.0.15 before 2.2.13 contains an allowlist bypass vulnerability that allows page editors to invoke arbitrary public static methods by relocating data-*@ directives with unset-name@ or integer keys. Attackers with page-edit permission can embed crafted fields in Flex form overrides in page frontmatter to call methods like Folder::delete or Utils::download, deleting directories, overwriting files, or reading files outside the page tree.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116019\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 14 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>Grav 2.0.15 before 2.2.13 contains an allowlist bypass vulnerability that allows page editors to invoke arbitrary public static methods by relocating data-*@ directives with unset-name@ or integer keys. Attackers with page-edit permission can embed crafted fields in Flex form overrides in page frontmatter to call methods like Folder::delete or Utils::download, deleting directories, overwriting files, or reading files outside the page tree.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -2508,7 +2532,7 @@
    {
     "title": "CVE-2026-116018 - ONEARMY community-platform before 2.165.2 IDOR via notification read endpoint",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116018",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116018\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>ONEARMY community-platform before 2.165.2 contains an insecure direct object reference vulnerability that allows authenticated users to mark other users' notifications as read via POST /api/notifications/:id/read. Attackers can iterate sequential notification IDs to suppress unread indicators of users in the same tenant, causing them to miss replies, comments and new-content notices.\n  <br />\n  <strong>Severity:</strong> 5.3 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116018\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 14 hours, 17 minutes ago\n  <br />\n  <strong>Description :</strong>ONEARMY community-platform before 2.165.2 contains an insecure direct object reference vulnerability that allows authenticated users to mark other users' notifications as read via POST /api/notifications/:id/read. Attackers can iterate sequential notification IDs to suppress unread indicators of users in the same tenant, causing them to miss replies, comments and new-content notices.\n  <br />\n  <strong>Severity:</strong> 5.3 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.268Z"
@@ -3512,37 +3536,21 @@
     "pubDate": "Fri, 23 Oct 2026 15:17:30 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T16:58:18.465Z"
-   },
-   {
-    "title": "CVE-2026-115477 - obsidian-tc: Declined human-in-the-loop confirmations can permit destructive calls over HTTP",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115477",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115477\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 3:17 p.m. | 1 hour, 5 minutes ago\n  <br />\n  <strong>Description :</strong>obsidian-tc is a governed, agent-ready Model Context Protocol server for Obsidian vaults. From 1.13.0 until 1.31.4, on a Streamable HTTP deployment with `auth.jwtSecret` configured and a 2026-07-28-era client declaring `elicitation.form` support, a dispatch-gated tool call offered an `inputRequired` confirmation could still complete after the human declined or cancelled, or the elicitation response was omitted or malformed, provided the client echoed the validly bound `requestState` on resubmission. The server trusted an authentic, call-bound state as proof of approval even though that state was minted before the `elicitation/create` leg was asked and proved only that the resubmission belonged to the same call. A client behaving incorrectly or under an attacker's control could therefore execute dispatch-gated destructive vault operations without the human's approval, while still requiring the caller's ordinary tool permissions. Only tools marked `destructive: true` or requiring a scope with a human-in-the-loop floor were reachable through this bypass. The sixteen handler-side conditionally gated tools, including `write_note` overwrite and `move_note`, did not read elicitation state on the modern wire and let neither approval nor decline through that path. Affected deployments using stdio or leaving `auth.jwtSecret` unset instead used the CLI `elicit_token` fallback and did not offer this `requestState` round trip. The fix does not prevent a malicious client from reporting a fabricated approval, because the server cannot verify that the client displayed the form or that a human saw it. This issue is fixed in version 1.31.4.\n  <br />\n  <strong>Severity:</strong> 7.1 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Fri, 23 Oct 2026 15:17:29 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-23T16:58:18.465Z"
-   },
-   {
-    "title": "CVE-2026-112333 - GFI Archiver < 15.14 Stored XSS via MailInsights.aspx",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-112333",
-    "description": "<strong>CVE ID :</strong>CVE-2026-112333\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 3:17 p.m. | 1 hour, 5 minutes ago\n  <br />\n  <strong>Description :</strong>GFI Archiver before 15.14 contains a stored cross-site scripting vulnerability in the MailInsights scheduled report configuration that allows authenticated attackers to inject arbitrary web script or HTML via the report name parameter to /Archiver/MailInsights.aspx. The injected payload is stored by ReportScheduling.btnSaveReport_Click() without output encoding and is executed in the browser of the user who created the scheduled report when they subsequently view the MailInsights page.\n  <br />\n  <strong>Severity:</strong> 5.4 | MEDIUM\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Fri, 23 Oct 2026 15:17:24 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-23T16:58:18.465Z"
-   },
-   {
-    "title": "CVE-2026-106765 - @rog0x/mcp-docker-tools Remote Code Execution",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-106765",
-    "description": "<strong>CVE ID :</strong>CVE-2026-106765\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 3:17 p.m. | 1 hour, 5 minutes ago\n  <br />\n  <strong>Description :</strong>An issue in @rog0x/mcp-docker-tools 1.0.1 allows a remote attacker to execute arbitrary code via the handleImageList function.\n  <br />\n  <strong>Severity:</strong> 7.5 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Fri, 23 Oct 2026 15:17:23 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-23T16:58:18.465Z"
    }
   ],
   "cvefeed.io High & Critical": [
    {
+    "title": "CVE-2026-115995 - Unitree Robotics Unitree Go2 chat_go gpt_thread.py set_volume os command injection",
+    "link": "https://cvefeed.io/vuln/detail/CVE-2026-115995",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115995\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 11:16 p.m. | 5 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>A security vulnerability has been detected in Unitree Robotics Unitree Go2 up to 1.1.11.4. The impacted element is the function set_volume of the file gpt_thread.py of the component chat_go. Such manipulation of the argument Value leads to os command injection. The attack can be launched remotely. Upgrading to version 1.1.11.5 is sufficient to resolve this issue. You should upgrade the affected component. The vendor confirmed early: \"Submission 990502 corresponds to our internal ticket #474 (Go2 chat_go set_volume OS command injection, CWE-78).\"\n  <br />\n  <strong>Severity:</strong> 10.0 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "pubDate": "Sat, 24 Oct 2026 23:16:58 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:41.237Z"
+   },
+   {
     "title": "CVE-2026-114820 - Vulnerability in the Oracle Java SE, Oracle GraalV",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114820",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114820\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 3 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511-b32, 8u511-perf-b32, 11.0.33.0.2, 17.0.21.0.2, 21.0.13.0.2, 25.0.5.0.2, 27.0.1.0.2; Oracle GraalVM for JDK: 17.0.21.0.2 and  21.0.13.0.2; Oracle GraalVM Enterprise Edition: 21.3.20.0.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data as well as  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).\n  <br />\n  <strong>Severity:</strong> 9.1 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114820\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 7:17 p.m. | 9 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Vulnerability in the Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition product of Oracle Java SE (component: JSSE).  Supported versions that are affected are Oracle Java SE: 8u511-b32, 8u511-perf-b32, 11.0.33.0.2, 17.0.21.0.2, 21.0.13.0.2, 25.0.5.0.2, 27.0.1.0.2; Oracle GraalVM for JDK: 17.0.21.0.2 and  21.0.13.0.2; Oracle GraalVM Enterprise Edition: 21.3.20.0.2. Easily exploitable vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data as well as  unauthorized access to critical data or complete access to all Oracle Java SE, Oracle GraalVM for JDK, Oracle GraalVM Enterprise Edition accessible data. Note: This vulnerability can be exploited by using APIs in the specified Component, e.g., through a web service which supplies data to the APIs. This vulnerability also applies to Java deployments, typically in clients running sandboxed Java Web Start applications or sandboxed Java applets, that load and run untrusted code (e.g., code that comes from the internet) and rely on the Java sandbox for security. CVSS 3.1 Base Score 9.1 (Confidentiality and Integrity impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N).\n  <br />\n  <strong>Severity:</strong> 9.1 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 19:17:04 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T21:29:55.527Z"
@@ -3550,7 +3558,7 @@
    {
     "title": "CVE-2026-115933 - Forged signed tokens let any registered user take over other users and organizations",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115933",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115933\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 7 hours, 3 minutes ago\n  <br />\n  <strong>Description :</strong>Postiz signs its session, invitation and password reset tokens with one shared secret and without any marker of what a token is for. A route that refreshes the credentials of a browser-extension channel signed data taken from the request itself and stored the result where the requesting user can read it back. A user could therefore obtain a validly signed token containing any claims they choose, which the application accepts as a session, as an organization invitation with a chosen role, as a password reset or as an enterprise provisioning token.\n\nA second, narrower route that creates team invitations signs extra fields from the request body in the same way.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115933\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 13 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Postiz signs its session, invitation and password reset tokens with one shared secret and without any marker of what a token is for. A route that refreshes the credentials of a browser-extension channel signed data taken from the request itself and stored the result where the requesting user can read it back. A user could therefore obtain a validly signed token containing any claims they choose, which the application accepts as a session, as an organization invitation with a chosen role, as a password reset or as an enterprise provisioning token.\n\nA second, narrower route that creates team invitations signs extra fields from the request body in the same way.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 15:17:33 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3558,7 +3566,7 @@
    {
     "title": "CVE-2026-115557 - Distrust compromised intermediate certificates in ssl module",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115557",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115557\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 7 hours, 3 minutes ago\n  <br />\n  <strong>Description :</strong>Python has added a denylist for known compromised certificates to the \"ssl\" module to ensure user safety even without certificate revocation configured. Known compromised certificates will automatically be rejected regardless of the SSLContext policy configuration.\n  <br />\n  <strong>Severity:</strong> 9.4 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115557\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 3:17 p.m. | 13 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Python has added a denylist for known compromised certificates to the \"ssl\" module to ensure user safety even without certificate revocation configured. Known compromised certificates will automatically be rejected regardless of the SSLContext policy configuration.\n  <br />\n  <strong>Severity:</strong> 9.4 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 15:17:33 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3566,7 +3574,7 @@
    {
     "title": "CVE-2026-115932 - Path traversal in post media lets any registered user read server files",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115932",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115932\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 1:16 p.m. | 9 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>When a post is published, Postiz treats a media path that is not a web address as a file on the server's disk, but it does not check that the file lies inside the upload directory. A registered user can store a crafted media path with a post, get it past the checks that normally restrict it, and have the publishing worker read an arbitrary file and send it as an attachment to a Discord server the user controls.\n\nThe same unconfined reads can be reached through two further routes. One tells the caller whether a file exists and can exhaust the backend's memory, the other delivers the file the same way as the main route. Self-registration is open by default, so the attacker needs no existing account.\n  <br />\n  <strong>Severity:</strong> 9.6 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115932\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 1:16 p.m. | 15 hours, 5 minutes ago\n  <br />\n  <strong>Description :</strong>When a post is published, Postiz treats a media path that is not a web address as a file on the server's disk, but it does not check that the file lies inside the upload directory. A registered user can store a crafted media path with a post, get it past the checks that normally restrict it, and have the publishing worker read an arbitrary file and send it as an attachment to a Discord server the user controls.\n\nThe same unconfined reads can be reached through two further routes. One tells the caller whether a file exists and can exhaust the backend's memory, the other delivers the file the same way as the main route. Self-registration is open by default, so the attacker needs no existing account.\n  <br />\n  <strong>Severity:</strong> 9.6 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 13:16:37 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3574,7 +3582,7 @@
    {
     "title": "CVE-2026-116019 - Grav 2.0.15 before 2.2.13 Allowlist Bypass via Flex Form Override Directives",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116019",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116019\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Grav 2.0.15 before 2.2.13 contains an allowlist bypass vulnerability that allows page editors to invoke arbitrary public static methods by relocating data-*@ directives with unset-name@ or integer keys. Attackers with page-edit permission can embed crafted fields in Flex form overrides in page frontmatter to call methods like Folder::delete or Utils::download, deleting directories, overwriting files, or reading files outside the page tree.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116019\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Grav 2.0.15 before 2.2.13 contains an allowlist bypass vulnerability that allows page editors to invoke arbitrary public static methods by relocating data-*@ directives with unset-name@ or integer keys. Attackers with page-edit permission can embed crafted fields in Flex form overrides in page frontmatter to call methods like Folder::delete or Utils::download, deleting directories, overwriting files, or reading files outside the page tree.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3582,7 +3590,7 @@
    {
     "title": "CVE-2026-116014 - open62541 1.5.0 before 1.5.7 Integer Overflow Heap Buffer Overflow via Custom DataType",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116014",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116014\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>open62541 1.5.0 before 1.5.7 contains an integer overflow in UA_DataType_fromStructureDescription() that wraps the 16-bit memSize field for large custom structure definitions. A malicious OPC UA server can supply DataType definitions via UA_Client_getRemoteDataTypes(), causing decodeBinaryStructure() to overflow the heap, crashing clients or enabling code execution.\n  <br />\n  <strong>Severity:</strong> 9.2 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116014\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>open62541 1.5.0 before 1.5.7 contains an integer overflow in UA_DataType_fromStructureDescription() that wraps the 16-bit memSize field for large custom structure definitions. A malicious OPC UA server can supply DataType definitions via UA_Client_getRemoteDataTypes(), causing decodeBinaryStructure() to overflow the heap, crashing clients or enabling code execution.\n  <br />\n  <strong>Severity:</strong> 9.2 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:57 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3590,7 +3598,7 @@
    {
     "title": "CVE-2026-116011 - Crow before 1.3.4 Denial of Service via Deeply Nested JSON in crow::json::load()",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116011",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116011\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Crow before 1.3.4 contains an uncontrolled recursion vulnerability in crow::json::load() that allows remote unauthenticated attackers to crash the server by sending deeply nested JSON. Attackers can send a request body with thousands of nested objects to exhaust the worker thread stack, terminating the process and dropping all connections.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116011\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Crow before 1.3.4 contains an uncontrolled recursion vulnerability in crow::json::load() that allows remote unauthenticated attackers to crash the server by sending deeply nested JSON. Attackers can send a request body with thousands of nested objects to exhaust the worker thread stack, terminating the process and dropping all connections.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:57 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3598,7 +3606,7 @@
    {
     "title": "CVE-2026-116009 - Camaleon CMS before 2.9.3 Path Traversal RCE via Media crop_url Action",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-116009",
-    "description": "<strong>CVE ID :</strong>CVE-2026-116009\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Camaleon CMS before 2.9.3 contains a path traversal vulnerability that allows users with only the media permission to write arbitrary files by supplying ../ sequences in the name parameter. Attackers can send a base64 data: URI to the crop_url media action to write an ERB template into a theme's views directory, which executes when rendered.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-116009\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Camaleon CMS before 2.9.3 contains a path traversal vulnerability that allows users with only the media permission to write arbitrary files by supplying ../ sequences in the name parameter. Attackers can send a base64 data: URI to the crop_url media action to write an ERB template into a theme's views directory, which executes when rendered.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:56 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3606,7 +3614,7 @@
    {
     "title": "CVE-2026-110018 - aBlocks <= 2.17.0 - Authenticated (Contributor+) Privilege Escalation to 'roleSlug' Block Attribute",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-110018",
-    "description": "<strong>CVE ID :</strong>CVE-2026-110018\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 10 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>The aBlocks – Gutenberg Blocks, User Dashboard Builder, Popup Builder, Form Builder & Animation Builder plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 2.17.0 via the `/ablocks/v1/form-builder/registration` REST endpoint. The vulnerability exists because the endpoint is registered with `permission_callback => __return_true` and the `register()` handler reads `roleSlug` directly from attacker-controlled block attributes in `post_content` without ever verifying that the block's `formType` is `registration` — a condition that `RegistrationFormSanitizer::verify()` imposes only at save-time, meaning a Contributor can preserve an arbitrary `roleSlug` by saving a block with `formType='login'` and then triggering the endpoint via a valid `wp_rest` nonce and post-ownership check. This makes it possible for authenticated attackers, with Contributor-level access and above, to escalate their WordPress role to Editor or any other non-administrator role and receive a fully authenticated session at the elevated privilege level via `WP_User::set_role()` and `wp_set_auth_cookie()`. Escalation is bounded below administrator-tier roles because `is_safe_registration_role()` rejects any role holding `manage_options`, `edit_users`, `delete_users`, `create_users`, `promote_users`, or `edit_theme_options`, meaning the highest practically reachable role on a standard WordPress installation is Editor.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-110018\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 12:16 p.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>The aBlocks – Gutenberg Blocks, User Dashboard Builder, Popup Builder, Form Builder & Animation Builder plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 2.17.0 via the `/ablocks/v1/form-builder/registration` REST endpoint. The vulnerability exists because the endpoint is registered with `permission_callback => __return_true` and the `register()` handler reads `roleSlug` directly from attacker-controlled block attributes in `post_content` without ever verifying that the block's `formType` is `registration` — a condition that `RegistrationFormSanitizer::verify()` imposes only at save-time, meaning a Contributor can preserve an arbitrary `roleSlug` by saving a block with `formType='login'` and then triggering the endpoint via a valid `wp_rest` nonce and post-ownership check. This makes it possible for authenticated attackers, with Contributor-level access and above, to escalate their WordPress role to Editor or any other non-administrator role and receive a fully authenticated session at the elevated privilege level via `WP_User::set_role()` and `wp_set_auth_cookie()`. Escalation is bounded below administrator-tier roles because `is_safe_registration_role()` rejects any role holding `manage_options`, `edit_users`, `delete_users`, `create_users`, `promote_users`, or `edit_theme_options`, meaning the highest practically reachable role on a standard WordPress installation is Editor.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 12:16:54 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T16:11:12.275Z"
@@ -3614,7 +3622,7 @@
    {
     "title": "CVE-2026-94075 - WordPress Newsletters plugin <= 4.18.1 - PHP Object Injection vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-94075",
-    "description": "<strong>CVE ID :</strong>CVE-2026-94075\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 14 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in Tribulant Software Newsletters newsletters-lite allows Object Injection.This issue affects Newsletters: from n/a through 4.18.1.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-94075\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 20 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in Tribulant Software Newsletters newsletters-lite allows Object Injection.This issue affects Newsletters: from n/a through 4.18.1.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 08:16:52 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T12:10:26.918Z"
@@ -3622,7 +3630,7 @@
    {
     "title": "CVE-2026-114196 - WordPress Paytium plugin <= 5.0.5 - PHP Object Injection vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-114196",
-    "description": "<strong>CVE ID :</strong>CVE-2026-114196\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 14 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in paytiumsupport Paytium paytium allows Object Injection.This issue affects Paytium: from n/a through 5.0.5.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-114196\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 20 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Deserialization of Untrusted Data vulnerability in paytiumsupport Paytium paytium allows Object Injection.This issue affects Paytium: from n/a through 5.0.5.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 08:16:51 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T12:10:26.918Z"
@@ -3630,7 +3638,7 @@
    {
     "title": "CVE-2026-112866 - WordPress Product Filter by WBW plugin <= 3.4.6 - SQL Injection vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-112866",
-    "description": "<strong>CVE ID :</strong>CVE-2026-112866\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 14 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in WPFactory Product Filter by WBW woo-product-filter allows Blind SQL Injection.This issue affects Product Filter by WBW: from n/a through 3.4.6.\n  <br />\n  <strong>Severity:</strong> 9.3 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-112866\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 20 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in WPFactory Product Filter by WBW woo-product-filter allows Blind SQL Injection.This issue affects Product Filter by WBW: from n/a through 3.4.6.\n  <br />\n  <strong>Severity:</strong> 9.3 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 08:16:51 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T12:10:26.918Z"
@@ -3638,7 +3646,7 @@
    {
     "title": "CVE-2026-111402 - WordPress Newsletters plugin <= 4.18.1 - SQL Injection vulnerability",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-111402",
-    "description": "<strong>CVE ID :</strong>CVE-2026-111402\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 14 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Tribulant Software Newsletters newsletters-lite allows SQL Injection.This issue affects Newsletters: from n/a through 4.18.1.\n  <br />\n  <strong>Severity:</strong> 9.3 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-111402\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 8:16 a.m. | 20 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Tribulant Software Newsletters newsletters-lite allows SQL Injection.This issue affects Newsletters: from n/a through 4.18.1.\n  <br />\n  <strong>Severity:</strong> 9.3 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 08:16:50 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T12:10:26.918Z"
@@ -3646,7 +3654,7 @@
    {
     "title": "CVE-2026-110956 - asVereinbase < 1.1.8 - Unauthenticated Authentication Bypass via 2FA Validation",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-110956",
-    "description": "<strong>CVE ID :</strong>CVE-2026-110956\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 a.m. | 16 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>The asVereinbase  WordPress plugin before 1.1.8 does not require a valid password or a genuine second factor before authenticating a user, treating an empty stored value as a match, so an unauthenticated attacker can log in as any user, including an administrator.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-110956\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 6:16 a.m. | 22 hours, 5 minutes ago\n  <br />\n  <strong>Description :</strong>The asVereinbase  WordPress plugin before 1.1.8 does not require a valid password or a genuine second factor before authenticating a user, treating an empty stored value as a match, so an unauthenticated attacker can log in as any user, including an administrator.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 06:16:36 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T18:56:25.135Z"
@@ -3654,7 +3662,7 @@
    {
     "title": "CVE-2026-115806 - Prime Mover <= 2.2.1 - Unauthenticated PHP Object Injection via Base64-Encoded Comment during Migration Search-and-Replace",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115806",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115806\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 5:17 a.m. | 17 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>The Prime Mover – Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2.1 via deserialization of untrusted input in the migration search-and-replace routine (recursiveUnserializeReplace()). An unauthenticated attacker can store a crafted, base64-encoded serialized object in wp_comments.comment_content through the standard comment-submission endpoint (wp-comments-post.php). When an administrator subsequently performs a routine Prime Mover export or restore, the plugin base64-decodes that stored value and passes it to unserialize() with no allowed_classes restriction. A Property-Oriented Programming (POP) chain is present in the plugin's own bundled Freemius library (FS_Clone_Manager::__set → FS_Option_Manager::set_option → store() → update_option()), so no additional plugin or theme is required — the plugin ships the gadget itself.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115806\n  <br />\n  <strong>Published :</strong> Oct. 24, 2026, 5:17 a.m. | 23 hours, 4 minutes ago\n  <br />\n  <strong>Description :</strong>The Prime Mover – Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2.1 via deserialization of untrusted input in the migration search-and-replace routine (recursiveUnserializeReplace()). An unauthenticated attacker can store a crafted, base64-encoded serialized object in wp_comments.comment_content through the standard comment-submission endpoint (wp-comments-post.php). When an administrator subsequently performs a routine Prime Mover export or restore, the plugin base64-decodes that stored value and passes it to unserialize() with no allowed_classes restriction. A Property-Oriented Programming (POP) chain is present in the plugin's own bundled Freemius library (FS_Clone_Manager::__set → FS_Option_Manager::set_option → store() → update_option()), so no additional plugin or theme is required — the plugin ships the gadget itself.\n  <br />\n  <strong>Severity:</strong> 9.8 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Sat, 24 Oct 2026 05:17:04 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T07:08:24.628Z"
@@ -3662,7 +3670,7 @@
    {
     "title": "CVE-2026-115931 - Arbitrary file read and backend crash through unrestricted provider method calls",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115931",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115931\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 11:17 p.m. | 23 hours, 3 minutes ago\n  <br />\n  <strong>Description :</strong>Postiz lets a signed-in user ask the backend to run a function on one of their connected channels. The backend did not restrict which functions can be requested, so a user could call internal helper functions that were never meant to be reachable from the web interface.\n\nOne of those helpers reads a file from the server's disk. A user who connects a channel whose stored token is a file path can have the backend return the contents of any file it can read, including its environment, which holds the secret used to sign login sessions, the database address and the credentials of connected services. Another helper makes the backend process exit with a single request. Self-registration is open by default, so no existing account and no action by another user is needed.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115931\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 11:17 p.m. | 1 day, 5 hours ago\n  <br />\n  <strong>Description :</strong>Postiz lets a signed-in user ask the backend to run a function on one of their connected channels. The backend did not restrict which functions can be requested, so a user could call internal helper functions that were never meant to be reachable from the web interface.\n\nOne of those helpers reads a file from the server's disk. A user who connects a channel whose stored token is a file path can have the backend return the contents of any file it can read, including its environment, which holds the secret used to sign login sessions, the database address and the credentials of connected services. Another helper makes the backend process exit with a single request. Self-registration is open by default, so no existing account and no action by another user is needed.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 23:17:43 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3670,7 +3678,7 @@
    {
     "title": "CVE-2026-115938 - Low privilege condition filter escapes Twig sandbox, recovers \"securityKey\" and reaches RCE",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115938",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115938\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>Craft CMS allows any authenticated control panel user to submit an element-search condition whose element selector is evaluated as a sandboxed Twig object template. Craft’s allowed column filter delegates property lookup to Yii ArrayHelper, outside Twig’s SecurityPolicy. Repeated single-segment lookups therefore bypass the sandbox’s empty property/method allowlists.\n\n\n\nThe vulnerable condition value is ultimately cast to an integer. That does not protect the secret: the template can return author ID 1 when a guessed key character is correct and an impossible ID otherwise. The JSON endpoint returns entries for the first case and an empty array for the second, forming a stable remote character oracle.\n\n\n\nAfter recovering GeneralConfig::securityKey, the same user can compute Craft’s generic HMAC wire format offline. Signed parameters such as redirect are then accepted and passed to unsandboxed View::renderObjectTemplate(), where Twig’s string-callable form can invoke native PHP callables. The regression proof uses the harmless substr() callback and observes abcdef becoming cdef; it does not execute an OS command.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115938\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>Craft CMS allows any authenticated control panel user to submit an element-search condition whose element selector is evaluated as a sandboxed Twig object template. Craft’s allowed column filter delegates property lookup to Yii ArrayHelper, outside Twig’s SecurityPolicy. Repeated single-segment lookups therefore bypass the sandbox’s empty property/method allowlists.\n\n\n\nThe vulnerable condition value is ultimately cast to an integer. That does not protect the secret: the template can return author ID 1 when a guessed key character is correct and an impossible ID otherwise. The JSON endpoint returns entries for the first case and an empty array for the second, forming a stable remote character oracle.\n\n\n\nAfter recovering GeneralConfig::securityKey, the same user can compute Craft’s generic HMAC wire format offline. Signed parameters such as redirect are then accepted and passed to unsandboxed View::renderObjectTemplate(), where Twig’s string-callable form can invoke native PHP callables. The regression proof uses the harmless substr() callback and observes abcdef becoming cdef; it does not execute an OS command.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:59 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3678,7 +3686,7 @@
    {
     "title": "CVE-2026-115937 - Unauthenticated payment reuse allows unpaid orders to be marked as paid",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115937",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115937\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>The Mollie webhook endpoint accepts two independent, attacker-controlled parameters and never verifies that they belong together:\n\n  *  commerceTransactionHash — selects which Craft Commerce transaction is completed\n  *  id — selects which Mollie payment is queried for its status\n\n\n\n\nAn unauthenticated attacker holding any paid Mollie payment ID from the merchant’s account can pair it with any transaction hash.\n\n\n\nCommerce queries Mollie, sees status: paid, and marks the target transaction successful for that transaction’s full\namount, regardless of how much was actually paid.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115937\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>The Mollie webhook endpoint accepts two independent, attacker-controlled parameters and never verifies that they belong together:\n\n  *  commerceTransactionHash — selects which Craft Commerce transaction is completed\n  *  id — selects which Mollie payment is queried for its status\n\n\n\n\nAn unauthenticated attacker holding any paid Mollie payment ID from the merchant’s account can pair it with any transaction hash.\n\n\n\nCommerce queries Mollie, sees status: paid, and marks the target transaction successful for that transaction’s full\namount, regardless of how much was actually paid.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:59 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3686,7 +3694,7 @@
    {
     "title": "CVE-2026-115935 - Control panel only API response emulation replaces \"securityKey\" and reaches server RCE",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115935",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115935\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>The app/process-api-response-headers action accepts fake Craft API response headers from any authenticated control panel user.\n\n\n\nA non-admin user with only accessCp can place newline characters in X-Craft-Plugin-Licenses. Craft passes this value to its .env writer without removing the newlines.\n\n\n\nThis lets the user insert a new attacker-known CRAFT_SECURITY_KEY into .env. After Craft loads that key, the user can forge a signed login redirect containing a Twig system() callback.\n\n\n\nThis is different from the previous report. That report reads the existing key through a Twig sandbox bypass. This report replaces the key through fake API headers and CRLF injection. Fixing either source does not fix the other.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115935\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>The app/process-api-response-headers action accepts fake Craft API response headers from any authenticated control panel user.\n\n\n\nA non-admin user with only accessCp can place newline characters in X-Craft-Plugin-Licenses. Craft passes this value to its .env writer without removing the newlines.\n\n\n\nThis lets the user insert a new attacker-known CRAFT_SECURITY_KEY into .env. After Craft loads that key, the user can forge a signed login redirect containing a Twig system() callback.\n\n\n\nThis is different from the previous report. That report reads the existing key through a Twig sandbox bypass. This report replaces the key through fake API headers and CRLF injection. Fixing either source does not fix the other.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:59 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3694,7 +3702,7 @@
    {
     "title": "CVE-2026-115895 - Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115895",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115895\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>Happy DOM is a JavaScript implementation of a web browser without its graphical user interface. From 17.0.0 until 21.0.4, packages/happy-dom/src/module/ECMAScriptModuleCompiler.ts accepts a named ESM import alias without validating that it is a JavaScript binding identifier before inserting it into a generated destructuring binding. With enableJavaScriptEvaluation enabled, attacker-controlled HTML or module source can use an invalid alias that becomes a valid default initializer after compilation, causing the generated JavaScript to execute in the Node.js host process. The demonstrated reachable path uses a JSON module import attribute, which prevents the malicious alias from being emitted again in a later ESM circular-import assignment and keeps the generated function syntactically valid. This incomplete fix for CVE-2026-33943 is a distinct residual path because the earlier remediation validated the local export importName path but not the named-import alias. This issue is fixed in version 21.0.4.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115895\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>Happy DOM is a JavaScript implementation of a web browser without its graphical user interface. From 17.0.0 until 21.0.4, packages/happy-dom/src/module/ECMAScriptModuleCompiler.ts accepts a named ESM import alias without validating that it is a JavaScript binding identifier before inserting it into a generated destructuring binding. With enableJavaScriptEvaluation enabled, attacker-controlled HTML or module source can use an invalid alias that becomes a valid default initializer after compilation, causing the generated JavaScript to execute in the Node.js host process. The demonstrated reachable path uses a JSON module import attribute, which prevents the malicious alias from being emitted again in a later ESM circular-import assignment and keeps the generated function syntactically valid. This incomplete fix for CVE-2026-33943 is a distinct residual path because the earlier remediation validated the local export importName path but not the named-import alias. This issue is fixed in version 21.0.4.\n  <br />\n  <strong>Severity:</strong> 8.8 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3702,7 +3710,7 @@
    {
     "title": "CVE-2026-115893 - Wasmtime: Cranelift backend on aarch64 can jump to incorrect target on large Wasm `br_table` instruction",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115893",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115893\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>Wasmtime is a runtime for WebAssembly. Prior to 36.0.19, 48.0.7, and 49.0.4, the Cranelift compiler backend on aarch64 can compile a Wasm br_table instruction with more than approximately 256,000 targets so that it has an incorrect conditional branch target. The branch can then jump to arbitrary other code at a user-controlled offset, allowing a user-controlled Wasm module to escape the sandbox on aarch64 engines using the default Cranelift backend. This issue is fixed in versions 36.0.19, 48.0.7, and 49.0.4.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115893\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>Wasmtime is a runtime for WebAssembly. Prior to 36.0.19, 48.0.7, and 49.0.4, the Cranelift compiler backend on aarch64 can compile a Wasm br_table instruction with more than approximately 256,000 targets so that it has an incorrect conditional branch target. The branch can then jump to arbitrary other code at a user-controlled offset, allowing a user-controlled Wasm module to escape the sandbox on aarch64 engines using the default Cranelift backend. This issue is fixed in versions 36.0.19, 48.0.7, and 49.0.4.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3710,7 +3718,7 @@
    {
     "title": "CVE-2026-115889 - Wasmtime: Bit-packing in Cranelift compiler causes silent overflow and miscompilation",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115889",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115889\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day ago\n  <br />\n  <strong>Description :</strong>Wasmtime is a runtime for WebAssembly. Prior to 36.0.19 and 43.0.0, the Cranelift compiler backend bit-packs SSA value indices in a way that can silently overflow in release builds when compiling a sufficiently large or specially crafted Wasm function with many SSA values. The overflow can make Cranelift reference incorrect IR values, causing arbitrary miscompilation, type confusion, and other attacker-controlled effects that may escape the Wasm sandbox on any architecture using the default Cranelift backend. This issue is fixed in versions 36.0.19 and 43.0.0.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115889\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 10:16 p.m. | 1 day, 6 hours ago\n  <br />\n  <strong>Description :</strong>Wasmtime is a runtime for WebAssembly. Prior to 36.0.19 and 43.0.0, the Cranelift compiler backend bit-packs SSA value indices in a way that can silently overflow in release builds when compiling a sufficiently large or specially crafted Wasm function with many SSA values. The overflow can make Cranelift reference incorrect IR values, causing arbitrary miscompilation, type confusion, and other attacker-controlled effects that may escape the Wasm sandbox on any architecture using the default Cranelift backend. This issue is fixed in versions 36.0.19 and 43.0.0.\n  <br />\n  <strong>Severity:</strong> 9.9 | CRITICAL\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 22:16:58 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3718,7 +3726,7 @@
    {
     "title": "CVE-2026-58202 - OpenReception: Confirmation-email links built from the request Host enable pending-account takeover via `POST /api/auth/resend-confirmation`",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-58202",
-    "description": "<strong>CVE ID :</strong>CVE-2026-58202\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 9:17 p.m. | 1 day, 1 hour ago\n  <br />\n  <strong>Description :</strong>OpenReception's appointment booking software provides an end-to-end encrypted appointment booking platform. Prior to version 2.0.0, the account-confirmation link in emails is built from the request Host header, with no allowlist. The unauthenticated POST /api/auth/resend-confirmation rotates a pending invitee's confirmation token and emails a link whose host comes from the request. An attacker who sends one resend-confirmation with Host: attacker.example and a pending invitee's email causes that invitee to receive a confirmation email whose only link points to the attacker. If the invitee clicks, the one-time confirmation token reaches the attacker, who then confirms the account on the real tenant domain and registers a passkey they control, taking over the account before the legitimate invitee ever uses it. All released versions through v1.1.0 are affected; no patched version exists yet. Reaching the app with a spoofed Host depends on the front proxy: the stock Caddy catch-all forwards it, while an operator who configures explicit per-tenant proxy blocks is not affected (see Details 4). The invite path builds links from the trusted tenant.domain (invite/+server.ts:204-210); the resend-confirmation path builds them from the request Host. This issue has been patched in version 2.0.0.\n  <br />\n  <strong>Severity:</strong> 8.3 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-58202\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 9:17 p.m. | 1 day, 7 hours ago\n  <br />\n  <strong>Description :</strong>OpenReception's appointment booking software provides an end-to-end encrypted appointment booking platform. Prior to version 2.0.0, the account-confirmation link in emails is built from the request Host header, with no allowlist. The unauthenticated POST /api/auth/resend-confirmation rotates a pending invitee's confirmation token and emails a link whose host comes from the request. An attacker who sends one resend-confirmation with Host: attacker.example and a pending invitee's email causes that invitee to receive a confirmation email whose only link points to the attacker. If the invitee clicks, the one-time confirmation token reaches the attacker, who then confirms the account on the real tenant domain and registers a passkey they control, taking over the account before the legitimate invitee ever uses it. All released versions through v1.1.0 are affected; no patched version exists yet. Reaching the app with a spoofed Host depends on the front proxy: the stock Caddy catch-all forwards it, while an operator who configures explicit per-tenant proxy blocks is not affected (see Details 4). The invite path builds links from the trusted tenant.domain (invite/+server.ts:204-210); the resend-confirmation path builds them from the request Host. This issue has been patched in version 2.0.0.\n  <br />\n  <strong>Severity:</strong> 8.3 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 21:17:24 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -3726,7 +3734,7 @@
    {
     "title": "CVE-2026-115775 - Twisted: Unauthenticated Remote Denial of Service in the Twisted words domish XML Element Stream via an Unbounded Element Tree",
     "link": "https://cvefeed.io/vuln/detail/CVE-2026-115775",
-    "description": "<strong>CVE ID :</strong>CVE-2026-115775\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 9:17 p.m. | 1 day, 1 hour ago\n  <br />\n  <strong>Description :</strong>Twisted is an event-based framework for internet applications, supporting Python 3.6+. Prior to 26.10.0rc1, the twisted.words.xish.domish ExpatElementStream parser allows an unauthenticated remote peer to keep a container element open while continuously adding child elements. The parser retains the unfinished stanza as an in-memory tree without a byte or element-count limit, and XMPP pre-authentication stream parsing exposes this behavior before credentials are accepted. A single connection can therefore exhaust server memory and terminate the process. This issue is fixed in version 26.10.0rc1.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
+    "description": "<strong>CVE ID :</strong>CVE-2026-115775\n  <br />\n  <strong>Published :</strong> Oct. 23, 2026, 9:17 p.m. | 1 day, 7 hours ago\n  <br />\n  <strong>Description :</strong>Twisted is an event-based framework for internet applications, supporting Python 3.6+. Prior to 26.10.0rc1, the twisted.words.xish.domish ExpatElementStream parser allows an unauthenticated remote peer to keep a container element open while continuously adding child elements. The parser retains the unfinished stanza as an in-memory tree without a byte or element-count limit, and XMPP pre-authentication stream parsing exposes this behavior before credentials are accepted. A single connection can therefore exhaust server memory and terminate the process. This issue is fixed in version 26.10.0rc1.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
     "pubDate": "Fri, 23 Oct 2026 21:17:23 +0000",
     "categories": [],
     "firstSeen": "2026-10-23T23:23:42.602Z"
@@ -4730,14 +4738,6 @@
     "pubDate": "Thu, 22 Oct 2026 07:01:09 +0000",
     "categories": [],
     "firstSeen": "2026-10-22T09:34:35.721Z"
-   },
-   {
-    "title": "CVE-2026-93471 - Unbounded SAML message decompression in esaml allows memory exhaustion",
-    "link": "https://cvefeed.io/vuln/detail/CVE-2026-93471",
-    "description": "<strong>CVE ID :</strong>CVE-2026-93471\n  <br />\n  <strong>Published :</strong> Oct. 22, 2026, 6:59 a.m. | 2 hours, 35 minutes ago\n  <br />\n  <strong>Description :</strong>Improper Handling of Highly Compressed Data (Data Amplification) in esaml_binding in dropbox esaml allows an unauthenticated attacker to exhaust server memory and crash the Erlang VM via a crafted compressed SAMLResponse.\n\nesaml_binding:decode_response/2 base64-decodes the attacker-supplied SAMLResponse, inflates it with zlib:unzip/1 with no bound on the output, then converts the result to a charlist with binary_to_list/1 before parsing. This runs on the SAML consume (ACS) and single-logout endpoints, which accept unauthenticated requests by design, and it runs before any signature check. A small deflate stream reaches a compression ratio near 1000 to 1, so a request body of tens of kilobytes inflates to hundreds of megabytes and then to several gigabytes of list heap, so a few requests exhaust memory and take the node down.\n\nThis issue affects esaml: from 0.1.0 onward.\n  <br />\n  <strong>Severity:</strong> 8.7 | HIGH\n  <br />\n  Visit the link for more details, such as CVSS details, affected products, timeline, and more...",
-    "pubDate": "Thu, 22 Oct 2026 06:59:24 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-22T09:34:35.721Z"
    }
   ],
   "Kubernetes CVE Feed": [],
@@ -4746,7 +4746,7 @@
     "title": "Oracle Issues Emergency Java Update for Critical 9.1 HTTPS Trust Vulnerability - CyberSecurityNews",
     "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1pN2pzQ1NpamFqQzBLbVZYdkN2eEhHZ1pKWjVPVElsbjE5b3ZpRnhzZ3FqODBBTWdRWHBQU1BrOEFoLXNDa0xiNkdQSFRrOVM4cHFuRWh1U01Mc0NiYno2b3B30gFnQVVfeXFMUEt4YXJhZHdscjZoNkVZM05qSFRxRlY2a2FZVG82N0pES1gxNUJXN2tlSTFEamJLeG00Tmh1QlBqNEtNY0RRelJvMzRNcDg2RWFCZ2FDZXJnZF9NUWFjSlpCYlpxdkM4WQ?oc=5",
     "description": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1pN2pzQ1NpamFqQzBLbVZYdkN2eEhHZ1pKWjVPVElsbjE5b3ZpRnhzZ3FqODBBTWdRWHBQU1BrOEFoLXNDa0xiNkdQSFRrOVM4cHFuRWh1U01Mc0NiYno2b3B30gFnQVVfeXFMUEt4YXJhZHdscjZoNkVZM05qSFRxRlY2a2FZVG82N0pES1gxNUJXN2tlSTFEamJLeG00Tmh1QlBqNEtNY0RRelJvMzRNcDg2RWFCZ2FDZXJnZF9NUWFjSlpCYlpxdkM4WQ?oc=5\" target=\"_blank\">Oracle Issues Emergency Java Update for Critical 9.1 HTTPS Trust Vulnerability</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">CyberSecurityNews</font>",
-    "pubDate": "Sat, 24 Oct 2026 16:35:46 GMT",
+    "pubDate": "Sun, 25 Oct 2026 03:05:18 GMT",
     "categories": [],
     "firstSeen": "2026-10-23T11:58:21.474Z"
    },
@@ -4921,7 +4921,7 @@
    {
     "title": "PHP Warns of Another Unpatched RCE Risk Two Days After Emergency PHP2Shell Patches - The Hacker News",
     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOa1ZSODRXV0ZXTTJ1TFh6S19mRXJ0Yld5b3dDd1F2RnMwTXZ2Y1EyMm83ak05WVF3NndRRXhtczJBeG9tVmxWZXRCa2lHYjVkVzFUM0Y1dTFsbXoxaHpzY0lTQzRZeEpWQ2dmdkxBcWphV0gyeGNYNWtDZE1QWHpRSnRB?oc=5",
-    "description": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxOa1ZSODRXV0ZXTTJ1TFh6S19mRXJ0Yld5b3dDd1F2RnMwTXZ2Y1EyMm83ak05WVF3NndRRXhtczJBeG9tVmxWZXRCa2lHYjVkVzFUM0Y1dTFsbXoxaHpzY0lTQzRZeEpWQ2dmdkxBcWphV0gyeGNYNWtDZE1QWHpRSnRB?oc=5\" target=\"_blank\">PHP Warns of Another Unpatched RCE Risk Two Days After Emergency PHP2Shell Patches</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Hacker News</font></li><li><a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBmMjJpNVJUVXZNOHpjUGVKSkdUT0drTE52TGdlNmRsUzBoVU5zQlpTT3RSbllaMThCcGpNQkV2Q3hxc1RGYUdkT0pXZE1mNTRHUC03YkVWbHMyRlhSNzdSVmpUWXVUdWs?oc=5\" target=\"_blank\">SECURITY ALERT: PHP Critical RCE Vulnerabilities (CVE-2026-109618 and CVE-2026-109619)</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">www.trendmicro.com</font></li><li><a href=\"https://news.google.com/rss/articles/CBMidEFVX3lxTE1GaDRvTlIzRnQ0dGhRTUt0Ynh1YkNzaWE0OTBnRmlKSlVwTFVQbUFtNTVWaURSZkFZNzNVSHFrS2pMVnZyUm94MktaN2NseDdqZkhsd3ljNTRhNkFxOXdmYm1xNW9FaXhEZFlXSU1EaDA4V1ZD?oc=5\" target=\"_blank\">New PHP2Shell scanner checks your hosts for CVE-2026-109618 and CVE-2026-109619</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Help Net Security</font></li></ol>",
+    "description": "<ol><li><a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxOa1ZSODRXV0ZXTTJ1TFh6S19mRXJ0Yld5b3dDd1F2RnMwTXZ2Y1EyMm83ak05WVF3NndRRXhtczJBeG9tVmxWZXRCa2lHYjVkVzFUM0Y1dTFsbXoxaHpzY0lTQzRZeEpWQ2dmdkxBcWphV0gyeGNYNWtDZE1QWHpRSnRB?oc=5\" target=\"_blank\">PHP Warns of Another Unpatched RCE Risk Two Days After Emergency PHP2Shell Patches</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Hacker News</font></li><li><a href=\"https://news.google.com/rss/articles/CBMidEFVX3lxTE1GaDRvTlIzRnQ0dGhRTUt0Ynh1YkNzaWE0OTBnRmlKSlVwTFVQbUFtNTVWaURSZkFZNzNVSHFrS2pMVnZyUm94MktaN2NseDdqZkhsd3ljNTRhNkFxOXdmYm1xNW9FaXhEZFlXSU1EaDA4V1ZD?oc=5\" target=\"_blank\">New PHP2Shell scanner checks your hosts for CVE-2026-109618 and CVE-2026-109619</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Help Net Security</font></li><li><a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPZW1XcDhPckNPTDRHVHJPRWJNWjllU2hXMnNCS21JSnBOOGNENFk5czdEa0xHRVFNN2REdF8xN3hqWmE0aEx3am1TR2dpbTZNYnJwVl9jYklTQ3g2aWtPa3lSS0xNbUFmQTU4Q2hzU3poWDRXd29vd21NNWFtNHl5d1pjbFBDZ2NGMVdsaExmODBWVDNxbUgya0dkeWJ5UQ?oc=5\" target=\"_blank\">Understanding PHP2Shell: Everything You Need to Know</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Akamai</font></li></ol>",
     "pubDate": "Fri, 23 Oct 2026 11:25:00 GMT",
     "categories": [],
     "firstSeen": "2026-10-23T11:58:21.474Z"
@@ -6576,6 +6576,238 @@
     "firstSeen": "2026-10-22T02:42:29.155Z"
    },
    {
+    "title": "CVE-2011-2461_Magento_Patch exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-EDMONDSCOMMERCE-CVE-2011-2461_MAGENTO_PATCH&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2011-2461. CVSS 4.3.",
+    "pubDate": "Sun, 25 Oct 2026 03:25:06 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2023-48795 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-HAV0CX0-CVE-2023-48795&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2023-48795. CVSS 5.9.",
+    "pubDate": "Sun, 25 Oct 2026 03:04:51 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
+    "link": "https://sploitus.com/exploit?id=A4848C63-7BD2-53C8-BB5D-B111E4A9B251&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit for CVE-2026-109618. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 02:25:19 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "spip-cve-2026 exploit",
+    "link": "https://sploitus.com/exploit?id=77F4B12E-7796-5CB6-9142-C5076C59B093&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit for CVE-2026-109378 and CVE-2026-72708. CVSS 8.7.",
+    "pubDate": "Sun, 25 Oct 2026 02:03:52 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-93485 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-0XBLACKASH-CVE-2026-93485&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-93485. CVSS 7.1.",
+    "pubDate": "Sun, 25 Oct 2026 01:58:41 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "Exploit for Improper Encoding or Escaping of Output in Synology Beestation_Os",
+    "link": "https://sploitus.com/exploit?id=EEF53093-C0C0-5596-A36D-8BD6EC6D0A5B&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit for CVE-2024-10441. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:51:37 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-92680 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-GREPSTRENGTH-CVE-2026-92680&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-92680. CVSS 6.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:34:32 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "php2shell exploit",
+    "link": "https://sploitus.com/exploit?id=D23CD73E-114E-5319-9E5F-4277EB6ECF90&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit.",
+    "pubDate": "Sun, 25 Oct 2026 01:34:13 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "go-mal-pkgs exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-KNQYF263-GO-MAL-PKGS&utm_source=rss&utm_medium=rss",
+    "description": "Exploit.",
+    "pubDate": "Sun, 25 Oct 2026 01:32:39 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2025-24071 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-BARDLAUDIAN-CVE-2025-24071&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2025-24071. CVSS 6.5.",
+    "pubDate": "Sun, 25 Oct 2026 01:30:07 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "DEVVORTEX exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-R3FR4KT-DEVVORTEX&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2023-1326. CVSS 7.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:29:45 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-94545 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-HORKIMHAB-CVE-2026-94545&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-94545. CVSS 5.3.",
+    "pubDate": "Sun, 25 Oct 2026 01:27:58 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-93485 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-HORKIMHAB-CVE-2026-93485&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-93485. CVSS 7.1.",
+    "pubDate": "Sun, 25 Oct 2026 01:22:30 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-60004-PoC exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-ERBERKAN-CVE-2026-60004-POC&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-60004. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:21:24 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-94036 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-DJZZLIM-CVE-2026-94036&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-94036. CVSS 8.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:17:39 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
+    "link": "https://sploitus.com/exploit?id=AD26EB8F-34B5-55BA-956C-325AADD870F5&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit for CVE-2026-109618 and CVE-2026-109619. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:16:24 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "PoCForCVE-2015-1528 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SECMOB-POCFORCVE-2015-1528&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2015-1528. CVSS 9.3.",
+    "pubDate": "Sun, 25 Oct 2026 01:06:12 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
+    "link": "https://sploitus.com/exploit?id=A84AA2CC-8EFF-54D8-80A8-DAD8EBB7568A&utm_source=rss&utm_medium=rss",
+    "description": "Proof-of-concept exploit for CVE-2026-109618 and CVE-2026-109619. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 01:05:30 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "Juiceshopgl exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITLAB-MBRANDNER-GROUP-JUICESHOPGL&utm_source=rss&utm_medium=rss",
+    "description": "Exploit.",
+    "pubDate": "Sun, 25 Oct 2026 00:59:45 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-57821-PoC-Exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-TC4DY-CVE-2026-57821-POC-EXPLOIT&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-57821. CVSS 8.1.",
+    "pubDate": "Sun, 25 Oct 2026 00:59:40 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-5430 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-HORKIMHAB-CVE-2026-5430&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-5430. CVSS 10.",
+    "pubDate": "Sun, 25 Oct 2026 00:59:00 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "MAL-004 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-MBADANOIU-MAL-004&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2020-12641. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 00:56:22 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2022-46169-Cacti-v1.2.22-RCE exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-MIND2HEX-CVE-2022-46169-CACTI-V1.2.22-RCE&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2022-46169. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 00:54:13 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-54686-poc exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SAKU0512-CVE-2026-54686-POC&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-54686. CVSS 4.3.",
+    "pubDate": "Sun, 25 Oct 2026 00:54:10 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-60004 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-EQSTLAB-CVE-2026-60004&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-60004. CVSS 9.8.",
+    "pubDate": "Sun, 25 Oct 2026 00:53:28 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-72898 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-34ZY-CVE-2026-72898&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-72898. CVSS 10.",
+    "pubDate": "Sun, 25 Oct 2026 00:52:00 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2024-2887-REPORT exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-AD3210-CVE-2024-2887-REPORT&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2024-2887. CVSS 8.1.",
+    "pubDate": "Sun, 25 Oct 2026 00:51:40 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2018-10933 exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-BLACKNBUNNY-CVE-2018-10933&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2018-10933. CVSS 9.1.",
+    "pubDate": "Sun, 25 Oct 2026 00:47:03 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
+    "title": "CVE-2026-65013-BOLA-IDOR exploit",
+    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-ISACA0315-CVE-2026-65013-BOLA-IDOR&utm_source=rss&utm_medium=rss",
+    "description": "Exploit for CVE-2026-65013. CVSS 8.8.",
+    "pubDate": "Sun, 25 Oct 2026 00:44:36 +0000",
+    "categories": [],
+    "firstSeen": "2026-10-25T04:21:42.211Z"
+   },
+   {
     "title": "CVE-2021-29447 exploit",
     "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-DANILO1992-SYS-CVE-2021-29447&utm_source=rss&utm_medium=rss",
     "description": "Exploit for CVE-2021-29447. CVSS 7.1.",
@@ -7534,238 +7766,6 @@
     "pubDate": "Sat, 24 Oct 2026 03:38:13 +0000",
     "categories": [],
     "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
-    "link": "https://sploitus.com/exploit?id=6D91759B-5EB6-50AA-A724-1A511EFC910F&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-109618 and CVE-2026-109619. CVSS 9.8.",
-    "pubDate": "Sat, 24 Oct 2026 03:31:26 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
-    "link": "https://sploitus.com/exploit?id=D50C3408-1392-506F-A73B-0B29366E8122&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-109618 and CVE-2026-109619. CVSS 9.8.",
-    "pubDate": "Sat, 24 Oct 2026 03:31:26 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "Redis-RCE exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-AL1EX-REDIS-RCE&utm_source=rss&utm_medium=rss",
-    "description": "Exploit.",
-    "pubDate": "Sat, 24 Oct 2026 03:23:07 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "CVE-2026-2413-POC exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-P3NT3ST3R-STAR-CVE-2026-2413-POC&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2026-2413. CVSS 7.5.",
-    "pubDate": "Sat, 24 Oct 2026 03:17:28 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-111497",
-    "link": "https://sploitus.com/exploit?id=5D2FEB77-A3AE-5515-9E1D-4671B669CAFB&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-111497. CVSS 9.2.",
-    "pubDate": "Sat, 24 Oct 2026 03:17:24 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "CVE-2024-53677 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SEANRICKERD-CVE-2024-53677&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2024-53677. CVSS 9.8.",
-    "pubDate": "Sat, 24 Oct 2026 03:16:05 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "packages_apps_Settings_AOSP10_r33_CVE-2020-0416 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SATHEESH575555-PACKAGES_APPS_SETTINGS_AOSP10_R33_CVE-2020-0416&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2020-0416. CVSS 9.3.",
-    "pubDate": "Sat, 24 Oct 2026 03:14:04 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T07:08:25.249Z"
-   },
-   {
-    "title": "Exploit for Improperly Controlled Sequential Memory Allocation in Php",
-    "link": "https://sploitus.com/exploit?id=19177B9E-7D77-50E6-811C-3A4A1862C6FA&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-109618. CVSS 9.8.",
-    "pubDate": "Sat, 24 Oct 2026 00:27:16 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "CVE-2018-14699 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-REVOCAIN-CVE-2018-14699&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2018-14699. CVSS 9.8.",
-    "pubDate": "Sat, 24 Oct 2026 00:25:59 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "CVE-2021-24807 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-DLDYGNL-CVE-2021-24807&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2021-24807. CVSS 5.4.",
-    "pubDate": "Sat, 24 Oct 2026 00:24:51 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-102785",
-    "link": "https://sploitus.com/exploit?id=0FA7C8EE-53B0-5A9E-B882-F46472FD8A17&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-102785. CVSS 10.",
-    "pubDate": "Sat, 24 Oct 2026 00:19:23 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "dvwassl exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-PECO602-DVWASSL&utm_source=rss&utm_medium=rss",
-    "description": "Exploit.",
-    "pubDate": "Sat, 24 Oct 2026 00:13:54 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "PoC-CVE-2024-24034 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-ELIZEUOPAIN-POC-CVE-2024-24034&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2024-24034. CVSS 6.1.",
-    "pubDate": "Sat, 24 Oct 2026 00:11:44 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "best-CVE-2025-8088 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-PENTESTFUNCTIONS-BEST-CVE-2025-8088&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2025-8088. CVSS 8.8.",
-    "pubDate": "Sat, 24 Oct 2026 00:02:51 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "doublehop exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-AN00BYSS-DOUBLEHOP&utm_source=rss&utm_medium=rss",
-    "description": "Exploit.",
-    "pubDate": "Sat, 24 Oct 2026 00:00:43 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "CVE-2025-3054-Exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-FROGCHUNG-CVE-2025-3054-EXPLOIT&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2025-3054. CVSS 8.8.",
-    "pubDate": "Fri, 23 Oct 2026 23:54:42 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "AS400 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-N1CKDUNN-AS400&utm_source=rss&utm_medium=rss",
-    "description": "Exploit.",
-    "pubDate": "Fri, 23 Oct 2026 23:52:15 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "CVE-2023-7028 exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-GH-OST00-CVE-2023-7028&utm_source=rss&utm_medium=rss",
-    "description": "Exploit for CVE-2023-7028. CVSS 10.",
-    "pubDate": "Fri, 23 Oct 2026 23:51:38 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-105445",
-    "link": "https://sploitus.com/exploit?id=DFB5F9A3-18F8-5A8A-9D72-50EBBAFE4FDB&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-105445. CVSS 9.4.",
-    "pubDate": "Fri, 23 Oct 2026 23:49:22 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-17106",
-    "link": "https://sploitus.com/exploit?id=7EAF973E-AB71-51D8-92ED-C0D4E675B8AF&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-17106. CVSS 7.1.",
-    "pubDate": "Fri, 23 Oct 2026 23:49:09 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106073",
-    "link": "https://sploitus.com/exploit?id=5B849B14-D616-56A3-A0F3-EDFC1D53AA84&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106073. CVSS 3.3.",
-    "pubDate": "Fri, 23 Oct 2026 23:48:48 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106071",
-    "link": "https://sploitus.com/exploit?id=AE08E113-14BF-5016-A59D-9D9F8F3CAC53&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106071. CVSS 3.6.",
-    "pubDate": "Fri, 23 Oct 2026 23:48:35 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106070",
-    "link": "https://sploitus.com/exploit?id=38110A25-ED17-5E33-986A-DF2DDBFB6C02&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106070. CVSS 3.7.",
-    "pubDate": "Fri, 23 Oct 2026 23:48:22 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106074",
-    "link": "https://sploitus.com/exploit?id=BA38EEC8-8708-567F-8015-8F6231424833&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106074. CVSS 4.8.",
-    "pubDate": "Fri, 23 Oct 2026 23:48:04 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106072",
-    "link": "https://sploitus.com/exploit?id=41F59211-4F3E-526C-AF38-919E4CF98D15&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106072. CVSS 6.7.",
-    "pubDate": "Fri, 23 Oct 2026 23:47:51 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-105481",
-    "link": "https://sploitus.com/exploit?id=AB863457-5488-50C5-8E4C-CF537A695F97&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-105481. CVSS 6.5.",
-    "pubDate": "Fri, 23 Oct 2026 23:47:39 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-106069",
-    "link": "https://sploitus.com/exploit?id=AA42F268-3A35-5806-94EF-4E6CFA0CB77E&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-106069. CVSS 7.4.",
-    "pubDate": "Fri, 23 Oct 2026 23:47:14 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "PSpersist exploit",
-    "link": "https://sploitus.com/exploit?id=KITPLOIT:TOOLS-GITHUB-SAADAHLA-PSPERSIST&utm_source=rss&utm_medium=rss",
-    "description": "Exploit.",
-    "pubDate": "Fri, 23 Oct 2026 23:47:13 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
-   },
-   {
-    "title": "Exploit for CVE-2026-105483",
-    "link": "https://sploitus.com/exploit?id=7A9F069F-24F9-55A8-9F5A-AB6EBE0C3528&utm_source=rss&utm_medium=rss",
-    "description": "Proof-of-concept exploit for CVE-2026-105483. CVSS 7.4.",
-    "pubDate": "Fri, 23 Oct 2026 23:47:01 +0000",
-    "categories": [],
-    "firstSeen": "2026-10-24T01:53:45.125Z"
    }
   ],
   "VulDB Recent": [
@@ -8148,7 +8148,7 @@
     "firstSeen": "2026-10-24T16:11:13.854Z"
    },
    {
-    "title": "CVE-2026-114629 | Web::Simple up to 0.034 ParamParser get_unpacked_body_from buffer overflow (EUVD-2026-109295)",
+    "title": "CVE-2026-114629 | Web::Simple up to 0.034 ParamParser get_unpacked_body_from buffer overflow (EUVD-2026-109295 / Nessus ID 371748)",
     "link": "https://vuldb.com/vuln/426124",
     "description": "A vulnerability was found in <a href=\"https://vuldb.com/product/web_simple\">Web::Simple up to 0.034</a>. It has been classified as <a href=\"https://vuldb.com/kb/risk\">critical</a>. Impacted is the function <code>Web::Dispatch::ParamParser::get_unpacked_body_from</code> of the component <em>ParamParser</em>. Performing a manipulation results in buffer overflow.\n\nThis vulnerability was named <a href=\"https://vuldb.com/cve/CVE-2026-114629\">CVE-2026-114629</a>. The attack may be initiated remotely. There is no available exploit.\n\nUpgrading the affected component is recommended.",
     "pubDate": "Sat, 24 Oct 2026 16:15:21 +0200",
@@ -8543,7 +8543,7 @@
     "firstSeen": "2026-10-24T12:10:28.226Z"
    },
    {
-    "title": "CVE-2026-114705 | QuadLayers Wp Social Feed Gallery Plugin up to 5.0.13 on WordPress missing authentication",
+    "title": "CVE-2026-114705 | QuadLayers Wp Social Feed Gallery Plugin up to 5.0.13 on WordPress missing authentication (EUVD-2026-109263)",
     "link": "https://vuldb.com/vuln/426101",
     "description": "A vulnerability labeled as <a href=\"https://vuldb.com/kb/risk\">critical</a> has been found in <a href=\"https://vuldb.com/product/quadlayers:wp_social_feed_gallery_plugin\">QuadLayers Wp Social Feed Gallery Plugin up to 5.0.13</a> on WordPress. This issue affects some unknown processing. Executing a manipulation can lead to missing authentication.\n\nThis vulnerability is registered as <a href=\"https://vuldb.com/cve/CVE-2026-114705\">CVE-2026-114705</a>. It is possible to launch the attack remotely. No exploit is available.",
     "pubDate": "Sat, 24 Oct 2026 12:12:17 +0200",
@@ -8595,7 +8595,7 @@
     "firstSeen": "2026-10-24T12:10:28.226Z"
    },
    {
-    "title": "CVE-2026-114194 | Igor Funa Ad Inserter Plugin up to 2.8.18 on WordPress cross site scripting",
+    "title": "CVE-2026-114194 | Igor Funa Ad Inserter Plugin up to 2.8.18 on WordPress cross site scripting (EUVD-2026-109261)",
     "link": "https://vuldb.com/vuln/426098",
     "description": "A vulnerability was found in <a href=\"https://vuldb.com/product/igor_funa:ad_inserter_plugin\">Igor Funa Ad Inserter Plugin up to 2.8.18</a> on WordPress. It has been rated as <a href=\"https://vuldb.com/kb/risk\">problematic</a>. Affected by this issue is some unknown functionality. This manipulation causes cross site scripting.\n\nThis vulnerability is tracked as <a href=\"https://vuldb.com/cve/CVE-2026-114194\">CVE-2026-114194</a>. The attack is possible to be carried out remotely. No exploit exists.",
     "pubDate": "Sat, 24 Oct 2026 11:43:53 +0200",
@@ -8824,7 +8824,7 @@
     "firstSeen": "2026-10-24T12:10:28.226Z"
    },
    {
-    "title": "CVE-2026-114179 | wordplus BP Better Messages Plugin up to 3.1.3 on WordPress cross site scripting",
+    "title": "CVE-2026-114179 | wordplus BP Better Messages Plugin up to 3.1.3 on WordPress cross site scripting (EUVD-2026-109245)",
     "link": "https://vuldb.com/vuln/426085",
     "description": "A vulnerability categorized as <a href=\"https://vuldb.com/kb/risk\">problematic</a> has been discovered in <a href=\"https://vuldb.com/product/wordplus:bp_better_messages_plugin\">wordplus BP Better Messages Plugin up to 3.1.3</a> on WordPress. Affected is an unknown function. The manipulation results in cross site scripting.\n\nThis vulnerability is cataloged as <a href=\"https://vuldb.com/cve/CVE-2026-114179\">CVE-2026-114179</a>. The attack may be launched remotely. There is no exploit available.",
     "pubDate": "Sat, 24 Oct 2026 10:26:17 +0200",
@@ -8896,7 +8896,7 @@
     "firstSeen": "2026-10-24T12:10:28.226Z"
    },
    {
-    "title": "CVE-2026-112844 | Arraytics Event Solution Plugin up to 4.1.26 on WordPress cross site scripting",
+    "title": "CVE-2026-112844 | Arraytics Event Solution Plugin up to 4.1.26 on WordPress cross site scripting (EUVD-2026-109246)",
     "link": "https://vuldb.com/vuln/426081",
     "description": "A vulnerability was found in <a href=\"https://vuldb.com/product/arraytics:event_solution_plugin\">Arraytics Event Solution Plugin up to 4.1.26</a> on WordPress and classified as <a href=\"https://vuldb.com/kb/risk\">problematic</a>. The affected element is an unknown function. Such manipulation leads to cross site scripting.\n\nThis vulnerability is referenced as <a href=\"https://vuldb.com/cve/CVE-2026-112844\">CVE-2026-112844</a>. It is possible to launch the attack remotely. No exploit is available.",
     "pubDate": "Sat, 24 Oct 2026 10:25:18 +0200",
@@ -9001,7 +9001,7 @@
     "firstSeen": "2026-10-24T12:10:28.226Z"
    },
    {
-    "title": "CVE-2026-115981 | phpIPAM up to 1.8.3 upgrade/index.php REQUEST_URI cross site scripting",
+    "title": "CVE-2026-115981 | phpIPAM up to 1.8.3 upgrade/index.php REQUEST_URI cross site scripting (EUVD-2026-109318)",
     "link": "https://vuldb.com/vuln/426075",
     "description": "A vulnerability described as <a href=\"https://vuldb.com/kb/risk\">problematic</a> has been identified in <a href=\"https://vuldb.com/product/phpipam\">phpIPAM up to 1.8.3</a>. Affected by this vulnerability is an unknown functionality of the file <em>upgrade/index.php</em>. Such manipulation of the argument <em>REQUEST_URI</em> leads to cross site scripting.\n\nThis vulnerability is traded as <a href=\"https://vuldb.com/cve/CVE-2026-115981\">CVE-2026-115981</a>. The attack may be launched remotely. Furthermore, there is an exploit available.\n\nThe vendor was contacted early about this disclosure.",
     "pubDate": "Sat, 24 Oct 2026 09:22:45 +0200",
@@ -9068,7 +9068,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-97353 | News Kit Addons for Elementor Plugin up to 1.4.7 on WordPress authorization",
+    "title": "CVE-2026-97353 | News Kit Addons for Elementor Plugin up to 1.4.7 on WordPress authorization (EUVD-2026-109227)",
     "link": "https://vuldb.com/vuln/426071",
     "description": "A vulnerability categorized as <a href=\"https://vuldb.com/kb/risk\">critical</a> has been discovered in <a href=\"https://vuldb.com/product/news_kit_addons_for_elementor_plugin\">News Kit Addons for Elementor Plugin up to 1.4.7</a> on WordPress. The impacted element is an unknown function. Executing a manipulation can lead to missing authorization.\n\nThis vulnerability is registered as <a href=\"https://vuldb.com/cve/CVE-2026-97353\">CVE-2026-97353</a>. It is possible to launch the attack remotely. No exploit is available.",
     "pubDate": "Sat, 24 Oct 2026 08:23:50 +0200",
@@ -9102,7 +9102,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-107887 | Advanced Twenty Seventeen Plugin up to 1.3.1 on WordPress authorization",
+    "title": "CVE-2026-107887 | Advanced Twenty Seventeen Plugin up to 1.3.1 on WordPress authorization (EUVD-2026-109231)",
     "link": "https://vuldb.com/vuln/426069",
     "description": "A vulnerability was found in <a href=\"https://vuldb.com/product/advanced_twenty_seventeen_plugin\">Advanced Twenty Seventeen Plugin up to 1.3.1</a> on WordPress. It has been declared as <a href=\"https://vuldb.com/kb/risk\">problematic</a>. Impacted is an unknown function. Such manipulation leads to missing authorization.\n\nThis vulnerability is listed as <a href=\"https://vuldb.com/cve/CVE-2026-107887\">CVE-2026-107887</a>. The attack may be performed from remote. There is no available exploit.",
     "pubDate": "Sat, 24 Oct 2026 08:23:36 +0200",
@@ -9119,7 +9119,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-97352 | News Kit Addons for Elementor Plugin up to 1.4.8 on WordPress authorization",
+    "title": "CVE-2026-97352 | News Kit Addons for Elementor Plugin up to 1.4.8 on WordPress authorization (EUVD-2026-109228)",
     "link": "https://vuldb.com/vuln/426068",
     "description": "A vulnerability was found in <a href=\"https://vuldb.com/product/news_kit_addons_for_elementor_plugin\">News Kit Addons for Elementor Plugin up to 1.4.8</a> on WordPress. It has been classified as <a href=\"https://vuldb.com/kb/risk\">problematic</a>. This issue affects some unknown processing. This manipulation causes missing authorization.\n\nThis vulnerability is tracked as <a href=\"https://vuldb.com/cve/CVE-2026-97352\">CVE-2026-97352</a>. The attack is possible to be carried out remotely. No exploit exists.\n\nUpgrading the affected component is recommended.",
     "pubDate": "Sat, 24 Oct 2026 08:23:18 +0200",
@@ -9153,7 +9153,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-87835 | Front End Users Plugin up to 3.2.35 on WordPress Registration access control",
+    "title": "CVE-2026-87835 | Front End Users Plugin up to 3.2.35 on WordPress Registration access control (EUVD-2026-109230)",
     "link": "https://vuldb.com/vuln/426066",
     "description": "A vulnerability has been found in <a href=\"https://vuldb.com/product/front_end_users_plugin\">Front End Users Plugin up to 3.2.35</a> on WordPress and classified as <a href=\"https://vuldb.com/kb/risk\">critical</a>. This affects an unknown part of the component <em>Registration</em>. The manipulation leads to improper access controls.\n\nThis vulnerability is referenced as <a href=\"https://vuldb.com/cve/CVE-2026-87835\">CVE-2026-87835</a>. Remote exploitation of the attack is possible. No exploit is available.",
     "pubDate": "Sat, 24 Oct 2026 08:22:38 +0200",
@@ -9187,7 +9187,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-107907 | MAS Videos Plugin up to 1.3.4 on WordPress authorization",
+    "title": "CVE-2026-107907 | MAS Videos Plugin up to 1.3.4 on WordPress authorization (EUVD-2026-109229)",
     "link": "https://vuldb.com/vuln/426064",
     "description": "A vulnerability, which was classified as <a href=\"https://vuldb.com/kb/risk\">problematic</a>, has been found in <a href=\"https://vuldb.com/product/mas_videos_plugin\">MAS Videos Plugin up to 1.3.4</a> on WordPress. Affected by this vulnerability is an unknown functionality. Performing a manipulation results in missing authorization.\n\nThis vulnerability was named <a href=\"https://vuldb.com/cve/CVE-2026-107907\">CVE-2026-107907</a>. The attack may be initiated remotely. There is no available exploit.",
     "pubDate": "Sat, 24 Oct 2026 08:21:49 +0200",
@@ -9204,7 +9204,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-105199 | Pixel Tag Manager for WooCommerce Plugin up to 2.2.2 on WordPress AJAX Actions cross site scripting",
+    "title": "CVE-2026-105199 | Pixel Tag Manager for WooCommerce Plugin up to 2.2.2 on WordPress AJAX Actions cross site scripting (EUVD-2026-109226)",
     "link": "https://vuldb.com/vuln/426063",
     "description": "A vulnerability classified as <a href=\"https://vuldb.com/kb/risk\">problematic</a> was found in <a href=\"https://vuldb.com/product/pixel_tag_manager_for_woocommerce_plugin\">Pixel Tag Manager for WooCommerce Plugin up to 2.2.2</a> on WordPress. Affected is an unknown function of the component <em>AJAX Actions</em>. Such manipulation leads to cross site scripting.\n\nThis vulnerability is uniquely identified as <a href=\"https://vuldb.com/cve/CVE-2026-105199\">CVE-2026-105199</a>. The attack can be launched remotely. No exploit exists.\n\nUpgrading the affected component is advised.",
     "pubDate": "Sat, 24 Oct 2026 08:21:47 +0200",
@@ -9221,7 +9221,7 @@
     "firstSeen": "2026-10-24T07:08:25.345Z"
    },
    {
-    "title": "CVE-2026-110956 | asVereinbase Plugin up to 1.1.7 on WordPress improper authentication",
+    "title": "CVE-2026-110956 | asVereinbase Plugin up to 1.1.7 on WordPress improper authentication (EUVD-2026-109225)",
     "link": "https://vuldb.com/vuln/426062",
     "description": "A vulnerability classified as <a href=\"https://vuldb.com/kb/risk\">critical</a> has been found in <a href=\"https://vuldb.com/product/asvereinbase_plugin\">asVereinbase Plugin up to 1.1.7</a> on WordPress. This impacts an unknown function. This manipulation causes improper authentication.\n\nThis vulnerability is handled as <a href=\"https://vuldb.com/cve/CVE-2026-110956\">CVE-2026-110956</a>. The attack can be initiated remotely. There is not any exploit available.\n\nIt is recommended to upgrade the affected component.",
     "pubDate": "Sat, 24 Oct 2026 08:21:37 +0200",
@@ -10606,19 +10606,109 @@
      "Changelog"
     ],
     "firstSeen": "2026-10-22T02:42:30.359Z"
-   },
-   {
-    "title": "37.299",
-    "link": "https://fortiguard.fortinet.com/updates/app?version=37.299",
-    "description": "<h2>Newly Added (5)</h2><ul><li><a href=\"https://fortiguard.fortinet.com/appcontrol/62149\">Aibern.CO.Proxy.Browser</a></li><li><a href=\"https://fortiguard.fortinet.com/appcontrol/62297\">Mumble</a></li><li><a href=\"https://fortiguard.fortinet.com/appcontrol/62298\">Smash</a></li><li><a href=\"https://fortiguard.fortinet.com/appcontrol/62308\">MeshCentral</a></li><li><a href=\"https://fortiguard.fortinet.com/appcontrol/62311\">Smash_File.Upload</a></li></ul>",
-    "pubDate": "Thu, 24 Sep 2026 17:05:31 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T02:42:30.359Z"
    }
   ],
   "Antispam Checksum Updates": [
+   {
+    "title": "88.38018",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:51:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38017",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:46:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38016",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:41:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38015",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:36:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38014",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:31:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38013",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:26:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38012",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:21:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38011",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:16:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38010",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:11:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
+   {
+    "title": "88.38009",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:06:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.756Z"
+   },
    {
     "title": "88.37963",
     "link": "",
@@ -12018,109 +12108,109 @@
      "Changelog"
     ],
     "firstSeen": "2026-10-22T22:39:42.805Z"
-   },
-   {
-    "title": "88.37421",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:51:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37420",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:46:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37419",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:41:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37418",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:36:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37417",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:26:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37416",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:21:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37415",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:16:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37414",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:11:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37413",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:06:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
-   },
-   {
-    "title": "88.37412",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 17:56:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.815Z"
    }
   ],
   "Antispam URI Updates": [
+   {
+    "title": "101.29991",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:53:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29990",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:48:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29989",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:43:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29988",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:38:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29987",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:33:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29986",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:28:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29985",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:23:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29984",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:18:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29983",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:13:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
+   {
+    "title": "101.29982",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:08:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.777Z"
+   },
    {
     "title": "101.29931",
     "link": "",
@@ -13520,109 +13610,109 @@
      "Changelog"
     ],
     "firstSeen": "2026-10-22T22:39:42.815Z"
-   },
-   {
-    "title": "101.29360",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:53:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29359",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:48:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29358",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:43:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29357",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:38:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29356",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:33:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29355",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:28:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29354",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:23:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29353",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:18:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29352",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:13:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
-   },
-   {
-    "title": "101.29351",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:08:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.836Z"
    }
   ],
   "Antispam IP Updates": [
+   {
+    "title": "107.07125",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:50:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07124",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:40:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07123",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:30:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07122",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:20:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07121",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:10:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07120",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:00:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07119",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 02:50:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07118",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 02:40:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07117",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 02:30:01 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
+   {
+    "title": "107.07116",
+    "link": "",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 02:20:02 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.798Z"
+   },
    {
     "title": "107.07095",
     "link": "",
@@ -15022,109 +15112,19 @@
      "Changelog"
     ],
     "firstSeen": "2026-10-22T22:39:42.863Z"
-   },
-   {
-    "title": "107.06785",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:50:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06784",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:40:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06783",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:30:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06782",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:20:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06781",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:10:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06780",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:00:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06779",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 17:50:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06778",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 17:40:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06777",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 17:30:02 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
-   },
-   {
-    "title": "107.06776",
-    "link": "",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 17:20:01 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.856Z"
    }
   ],
   "Antivirus Updates": [
+   {
+    "title": "93.08158",
+    "link": "https://fortiguard.fortinet.com/updates/antivirus?version=93.08158",
+    "description": "<h2>Newly Added (3)</h2><ul><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3409223\">W32/Agent.EKW!tr.pws</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290470\">W32/Kryptik_AGen.HDB!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290471\">W64/GenKryptik.HWKC!tr</a></li></ul><h2>Modified (82)</h2><ul><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/103557\">Adware/Agent</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/6053960\">Adware/DllInject</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3222907\">Adware/GameHack</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10069194\">Adware/GameHack_AGen</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10072247\">Adware/GenKryptik_AGen</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/7079783\">Adware/Hiddad!Android</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8059934\">Adware/Keygen!OSX</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/96763\">Adware/Qhost</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290265\">Adware/RemoteAdmin_Zecurit</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10286106\">Android/Agent.BOB!tr.dldr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10217786\">Android/Agent.EIK!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10121086\">Android/Agent.JZJ!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10265865\">Android/Agent.NHC!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10276148\">Android/Agent.NMT!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10281002\">Android/Agent.NPM!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10285309\">Android/Agent.NSQ!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10277437\">Android/HiddenApp.NH!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10277608\">Linux/Gafgyt_AGen.JA!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290448\">Linux/Miner.AVN!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10276779\">Linux/Mirai.FDS!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10086439\">MSIL/Agent.DVI!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10283133\">MSIL/Agent.YPJ!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10285213\">MSIL/GenKryptik_AGen.CJN!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10285281\">MSIL/GenKryptik_AGen.CKT!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10277210\">MSIL/PureLogs.A!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8233130\">Malicious_Behavior.SB</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/62183\">PossibleThreat</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8289856\">PossibleThreat.DU</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10045915\">PossibleThreat.MPH.H</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10049511\">PossibleThreat.MTG.H</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8173658\">PossibleThreat.MU</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10097206\">PossibleThreat.PALLASNET.M</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8290953\">PossibleThreat.RF</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/2962223\">Riskware/Agent</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/6999407\">Riskware/AheadLib</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/56879\">Riskware/Application</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8133367\">Riskware/Application!Android</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3233293\">Riskware/CheatEngine</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10000322\">Riskware/ConnectWise</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/5915878\">Riskware/FlyStudio_Packed</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3458590\">Riskware/GameHack</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3116523\">Riskware/InstallCore</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/6878160\">Riskware/KingSoft</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8230197\">Riskware/Mal_OtorunP</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8252080\">Riskware/NDAoF</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10197750\">Riskware/RemoteAdmin_ConnectWiseControl</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/8266332\">Riskware/VeryFast</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/5040008\">Riskware/WinActivator</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10107487\">Riskware/ZixiaShtz</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/6237175\">VBS/Kryptik.BF!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/1232819\">W32/Agent.AILQ!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/2613378\">W32/Agent.ARB!tr.pws</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/689261\">W32/Agent.TES!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/1186482\">W32/Agent.TGF!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10147163\">W32/Agent.WB!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10289229\">W32/Filecoder.CVG!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290457\">W32/Filecoder.CWO!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/2377551\">W32/Fosniw.AU!tr.dldr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/7846505\">W32/Malicious_Behavior.SBX</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/58991\">W32/PossibleThreat</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10242961\">W32/Rugmi.BPR!tr.dldr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/3146000\">W32/Virut_rem.2</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10237763\">W64/AdaptixC2.A!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10148388\">W64/Agent.BYL!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10224669\">W64/Agent.GOJ!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/7456365\">W64/Agent.JDK!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10289445\">W64/Agent.LCL!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/7330098\">W64/Agent.QN!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10246845\">W64/Agent.XA!tr.pws</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10239075\">W64/GameHack.CI!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10288390\">W64/GenKryptik.HVJK!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10290447\">W64/GenKryptik.HWFR!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10231478\">W64/GenKryptik_AGen.AXG!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10240557\">W64/GenKryptik_AGen.BVS!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10267378\">W64/GenKryptik_AGen.DSL!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10276275\">W64/GenKryptik_AGen.EMV!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10288348\">W64/GenKryptik_AGen.FYX!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10279455\">W64/Kryptik.HJA!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10246797\">W64/PSWDump.M!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10111892\">W64/Rootkit_Agent.BT!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10109816\">W64/ShellcodeRunner.CF!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/virus/10289210\">W64/ShellcodeRunner.CPY!tr</a></li></ul>",
+    "pubDate": "Sun, 25 Oct 2026 03:06:44 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.863Z"
+   },
    {
     "title": "93.08157",
     "link": "https://fortiguard.fortinet.com/updates/antivirus?version=93.08157",
@@ -15499,6 +15499,106 @@
    }
   ],
   "Web Filtering Updates": [
+   {
+    "title": "236.60922",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60922",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 04:05:34 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60921",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60921",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 04:00:23 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60920",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60920",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:55:24 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60919",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60919",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:50:21 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60918",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60918",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:45:19 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60917",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60917",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:40:22 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60916",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60916",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:35:23 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60915",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60915",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:30:23 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60914",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60914",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:25:25 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
+   {
+    "title": "236.60913",
+    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60913",
+    "description": "",
+    "pubDate": "Sun, 25 Oct 2026 03:20:24 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.886Z"
+   },
    {
     "title": "236.60865",
     "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60865",
@@ -16898,106 +16998,6 @@
      "Changelog"
     ],
     "firstSeen": "2026-10-22T22:39:42.856Z"
-   },
-   {
-    "title": "236.60245",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60245",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 19:02:24 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60244",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60244",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:57:15 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60243",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60243",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:52:19 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60242",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60242",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:47:18 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60241",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60241",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:42:16 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60240",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60240",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:37:14 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60239",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60239",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:32:20 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60238",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60238",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:27:14 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60237",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60237",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:22:21 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
-   },
-   {
-    "title": "236.60236",
-    "link": "https://fortiguard.fortinet.com/updates/webfiltering?version=236.60236",
-    "description": "",
-    "pubDate": "Thu, 22 Oct 2026 18:17:19 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T19:23:11.938Z"
    }
   ],
   "FortiWeb Security Updates": [
@@ -17023,6 +17023,16 @@
    }
   ],
   "Mobile AntiVirus Updates": [
+   {
+    "title": "93.08158",
+    "link": "https://fortiguard.fortinet.com/updates/mobile?version=93.08158",
+    "description": "<h2>Modified (13)</h2><ul><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/6275422\">Adware/KyView!Android</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10220531\">Android/Agent.EHL!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10217786\">Android/Agent.EIK!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10220898\">Android/Agent.EJF!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10223382\">Android/Agent.ELM!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10273502\">Android/Agent.GGE!tr.spy</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10266482\">Android/Agent.NHD!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10276747\">Android/Agent.NNE!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10277986\">Android/Agent.NNV!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10280463\">Android/Agent.NPE!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10285184\">Android/Agent.NSN!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/10285141\">Android/Agent.NSS!tr</a></li><li><a href=\"https://fortiguard.fortinet.com/encyclopedia/mobile/8133367\">Riskware/Application!Android</a></li></ul>",
+    "pubDate": "Sun, 25 Oct 2026 03:05:18 -0700",
+    "categories": [
+     "Changelog"
+    ],
+    "firstSeen": "2026-10-25T04:21:42.951Z"
+   },
    {
     "title": "93.08157",
     "link": "https://fortiguard.fortinet.com/updates/mobile?version=93.08157",
@@ -17518,16 +17528,6 @@
     "link": "https://fortiguard.fortinet.com/updates/ots?version=37.301",
     "description": "",
     "pubDate": "Tue, 29 Sep 2026 17:14:16 -0700",
-    "categories": [
-     "Changelog"
-    ],
-    "firstSeen": "2026-10-22T02:42:30.392Z"
-   },
-   {
-    "title": "37.299",
-    "link": "https://fortiguard.fortinet.com/updates/ots?version=37.299",
-    "description": "",
-    "pubDate": "Thu, 24 Sep 2026 17:05:38 -0700",
     "categories": [
      "Changelog"
     ],
