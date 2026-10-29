@@ -7,21 +7,13 @@
 html{scroll-behavior:smooth}
 body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--body);line-height:1.5;overflow-x:hidden;background:var(--bg1)}
 
-/* ---------- Pool water: cyan > violet > hot pink, with caustic ripple lines ---------- */
+/* ---------- Background: WebGL iridescence (js/iridescence.js) over a CSS gradient fallback ---------- */
 .pool{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;
   background:linear-gradient(180deg,#1aaef0 0%,#4fb0f4 22%,#9a78f0 55%,#c964ea 80%,#e94fe0 100%)}
-.caus{position:absolute;inset:-12%;width:124%;height:124%;mix-blend-mode:screen}
-.c1{opacity:.75;animation:drift1 22s ease-in-out infinite alternate}
-.c2{opacity:.5;animation:drift2 30s ease-in-out infinite alternate}
-.glow{position:absolute;inset:0;display:block;
-  background:
-   radial-gradient(ellipse 60% 40% at 20% 8%,rgba(255,255,255,.35),transparent 70%),
-   radial-gradient(ellipse 50% 35% at 85% 95%,rgba(255,255,255,.25),transparent 70%),
-   linear-gradient(115deg,transparent 35%,rgba(255,255,255,.14) 48%,transparent 60%) 0 0/220% 100%;
-  animation:sheen 16s ease-in-out infinite alternate}
-@keyframes drift1{from{transform:translate(-2%,-1%) scale(1) rotate(0)}to{transform:translate(3%,2%) scale(1.08) rotate(1.5deg)}}
-@keyframes drift2{from{transform:translate(3%,2%) scale(1.1) rotate(0)}to{transform:translate(-3%,-2%) scale(1) rotate(-2deg)}}
-@keyframes sheen{to{background-position:0 0,0 0,-120% 0}}
+#iri{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .8s}
+#iri.on{opacity:1}
+/* soft deep-violet veil keeps white text readable on the bright shader */
+.pool::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,20,88,.28),rgba(29,20,88,.38))}
 
 .hero,main,footer{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px}
 .hero{text-align:center;padding-top:56px}
@@ -32,27 +24,17 @@ h1 span{color:var(--mint);text-shadow:3px 3px 0 var(--deep),6px 6px 0 rgba(29,20
 .search{display:flex;gap:8px;padding:8px;border-radius:16px;background:var(--card);
   border:2px solid #fff;box-shadow:0 0 24px rgba(255,255,255,.5);backdrop-filter:blur(8px)}
 
-/* clickable info box, right-aligned above the search bar */
+/* info button, right-aligned above the search bar; opens an overlay so nothing shifts */
 .info{margin:0 0 10px;text-align:right}
-.info summary{display:inline-block;list-style:none;cursor:pointer;padding:2px 14px;border-radius:99px;border:2px solid #fff;
-  background:var(--card);backdrop-filter:blur(8px);font-family:var(--display);font-size:1.25rem;user-select:none}
-.info summary::-webkit-details-marker{display:none}
-.info summary:hover,.info[open] summary{background:#fff;color:#2b1b4d}
-.info-body{margin-top:8px;padding:12px 16px;text-align:left;border-radius:14px;border:2px solid #fff;
-  background:rgba(29,20,88,.72);backdrop-filter:blur(10px);box-shadow:4px 4px 0 var(--deep);font-size:.95rem}
-.info-body p{margin:0 0 8px}.info-body p:last-child{margin:0}
-.info-body b{color:var(--mint)}
+.info button{padding:2px 14px;border-radius:99px;border:2px solid #fff;color:var(--ink);
+  background:var(--card);backdrop-filter:blur(8px);font-family:var(--display);font-size:1.25rem}
+.info button:hover{background:#fff;color:#2b1b4d}
 
 input{flex:1;min-width:0;padding:12px 14px;border:0;border-radius:10px;font:inherit;background:#fff;color:#2b1b4d}
 button{font:inherit;cursor:pointer}
-.search button{padding:0 22px;border:0;border-radius:10px;background:linear-gradient(135deg,var(--pink),var(--peach));
-  color:#2b1b4d;font-family:var(--display);font-size:1.5rem}
 :focus-visible{outline:3px solid var(--mint);outline-offset:2px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .status{font-family:var(--display);font-size:1.3rem;color:#fff;min-height:1.6em;margin:10px 0 0;text-shadow:0 1px 8px var(--deep)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
-.filters button{padding:4px 16px;border-radius:99px;border:2px solid #fff;background:var(--card);color:var(--ink);font-family:var(--display);font-size:1.25rem;backdrop-filter:blur(6px)}
-.filters button[aria-pressed=true]{background:#fff;color:#2b1b4d}
 
 /* one collapsed box per source */
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
@@ -67,10 +49,11 @@ button{font:inherit;cursor:pointer}
 .go{padding:0 14px;font-family:var(--display);font-size:1.2rem;color:var(--mint)}
 .tile.off{opacity:.7}
 
-/* pop-up window with the items */
+/* pop-up windows */
 dialog{width:min(1100px,94vw);max-height:90vh;padding:0;border:2px solid #fff;border-radius:18px;color:var(--ink);
   background:rgba(29,20,88,.92);box-shadow:8px 8px 0 var(--deep);overflow:hidden}
 dialog[open]{display:block}
+dialog.small{width:min(520px,94vw)}
 dialog::backdrop{background:rgba(29,20,88,.6);backdrop-filter:blur(4px)}
 .dwrap{display:flex;flex-direction:column;max-height:90vh}
 .dhead{display:flex;align-items:center;gap:14px;padding:12px 18px;background:linear-gradient(135deg,var(--pink),var(--lav));color:#2b1b4d}
@@ -78,9 +61,18 @@ dialog::backdrop{background:rgba(29,20,88,.6);backdrop-filter:blur(4px)}
 .dhead h2{margin:0;font-family:var(--display);font-weight:400;font-size:2rem;line-height:1}
 .dhead p{margin:2px 0 0;font-size:.9rem}
 .dcount{font-family:var(--display);font-size:1.2rem;background:#fff;border-radius:99px;padding:0 12px;white-space:nowrap}
-#dclose{width:38px;height:38px;border-radius:50%;border:2px solid #2b1b4d;background:#fff;color:#2b1b4d;font-size:1.1rem;flex:none}
-#dclose:hover{background:var(--mint)}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:18px;overflow-y:auto;align-items:start}
+.xbtn{width:38px;height:38px;border-radius:50%;border:2px solid #2b1b4d;background:#fff;color:#2b1b4d;font-size:1.1rem;flex:none}
+.xbtn:hover{background:var(--mint)}
+.ibody{padding:16px 20px 6px;overflow-y:auto;font-size:.98rem}
+.ibody p{margin:0 0 12px}
+.ibody b{color:var(--mint)}
+
+/* sort toggle */
+.dsort{display:flex;align-items:center;gap:8px;padding:10px 18px 0;font-family:var(--display);font-size:1.2rem;color:var(--lav)}
+.sortbtn{padding:0 14px;border-radius:99px;border:2px solid #fff;background:var(--card);color:var(--ink);font-family:var(--display);font-size:1.2rem}
+.sortbtn[aria-pressed=true]{background:#fff;color:#2b1b4d}
+
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;padding:14px 18px 18px;overflow-y:auto;align-items:start}
 .dgrid .none{grid-column:1/-1}
 .none{margin:0;padding:14px;border-radius:12px;background:var(--card);text-align:center;font-family:var(--display);font-size:1.2rem}
 .item{padding:16px 18px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,.4);
@@ -92,8 +84,14 @@ dialog::backdrop{background:rgba(29,20,88,.6);backdrop-filter:blur(4px)}
 .item h3 a{color:inherit;text-decoration:none}
 .item h3 a:hover{text-decoration:underline wavy var(--pink)}
 .item p{margin:0 0 8px;color:#f1e8ff;font-size:.95rem}
+
+/* tags: clickable chips. topic = pink fill, vendor = lavender fill, feed's own category = mint outline */
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{font-size:.8rem;padding:2px 9px;border-radius:99px;border:1px solid var(--mint);color:var(--mint)}
+.tag{font-size:.8rem;line-height:1.4;padding:2px 9px;border-radius:99px;border:1px solid var(--mint);background:transparent;color:var(--mint)}
+.tag:hover{background:var(--mint);color:#2b1b4d}
+.tag.k-topic{background:var(--pink);border-color:var(--pink);color:#2b1b4d;font-weight:600}
+.tag.k-vendor{background:var(--lav);border-color:var(--lav);color:#2b1b4d}
+.tag.k-topic:hover,.tag.k-vendor:hover{background:#fff;border-color:#fff}
 mark{background:var(--peach);color:#2b1b4d;border-radius:3px;padding:0 2px}
 .retry{padding:2px 12px;border-radius:99px;border:2px solid #fff;background:var(--pink);color:#2b1b4d;font-family:var(--display);font-size:1.1rem}
 .empty{text-align:center;font-family:var(--display);font-size:1.5rem;color:#fff;text-shadow:0 1px 8px var(--deep)}
@@ -101,5 +99,4 @@ footer{text-align:center;padding:40px 20px 60px;color:#fff;font-size:.9rem;text-
 code{color:var(--deep);background:var(--mint);padding:0 4px;border-radius:4px;text-shadow:none}
 @media(prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto!important}
-  .caus,.glow{animation:none!important}
 }

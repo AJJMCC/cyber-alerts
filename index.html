@@ -11,45 +11,23 @@
 </head>
 <body>
 <div class="pool" aria-hidden="true">
-  <svg class="caus c1" width="100%" height="100%" preserveAspectRatio="none" focusable="false">
-    <filter id="w1" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.007 0.011" numOctaves="2" seed="4"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 0"/>
-      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 1 0 0 0 0 0"/></feComponentTransfer>
-      <feGaussianBlur stdDeviation=".7"/>
-    </filter>
-    <rect width="100%" height="100%" filter="url(#w1)"/>
-  </svg>
-  <svg class="caus c2" width="100%" height="100%" preserveAspectRatio="none" focusable="false">
-    <filter id="w2" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.011 0.008" numOctaves="2" seed="11"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  1 0 0 0 0"/>
-      <feComponentTransfer><feFuncA type="table" tableValues="0 0 0 0 0 1 0 0 0 0 0"/></feComponentTransfer>
-      <feGaussianBlur stdDeviation=".7"/>
-    </filter>
-    <rect width="100%" height="100%" filter="url(#w2)"/>
-  </svg>
-  <i class="glow"></i>
+  <canvas id="iri"></canvas>
 </div>
 <header class="hero">
   <h1>Big Frog's <span>30 Day Cyber</span> Radar</h1>
 
   <div class="searchwrap">
-    <details class="info">
-      <summary><span aria-hidden="true">ⓘ</span> How search works</summary>
-      <div class="info-body">
-        <p>Type the name of any software or hardware, like <b>Chrome</b>, <b>Cisco</b> or <b>router</b>. Big Frog checks every headline, summary and tag in every feed and shows only the feeds that have matching stories.</p>
-        <p>Open a feed box to see its stories, with matches highlighted. Search updates as you type. It only searches the data already loaded on this page, not the whole internet.</p>
-      </div>
-    </details>
+    <div class="info">
+      <button type="button" id="infoBtn" aria-haspopup="dialog"><span aria-hidden="true">ⓘ</span> How search works</button>
+    </div>
 
     <form class="search" role="search" id="searchForm">
       <label for="q" class="sr">Search software or hardware</label>
       <input id="q" type="search" placeholder="Try: router, Chrome, Windows, Cisco…" autocomplete="off">
-      <button type="submit">Scan</button>
     </form>
   </div>
   <p id="status" class="status" role="status" aria-live="polite"></p>
+  <p id="ago" class="status"></p>
 </header>
 
 <main>
@@ -57,22 +35,43 @@
   <p class="empty" id="empty" hidden>Big Frog found nothing. Either you're safe, or Big Frog isn't looking hard enough. 🐸</p>
 </main>
 
+<dialog id="idlg" class="small" aria-labelledby="ititle">
+  <div class="dwrap">
+    <div class="dhead">
+      <div><h2 id="ititle">How search works</h2></div>
+      <button type="button" class="xbtn" id="iclose" aria-label="Close">✕</button>
+    </div>
+    <div class="ibody">
+      <p>Type the name of any software or hardware, like <b>Chrome</b>, <b>Cisco</b> or <b>router</b>. Big Frog checks every headline, summary and tag in every feed and shows only the feeds that have matching stories.</p>
+      <p>Open a feed box to see its stories, with matches highlighted. Inside a feed you can sort by date (newest first) or by severity. Search updates as you type. It only searches the data already loaded on this page, not the whole internet.</p>
+      <p>Big Frog also sticks tags on stories: <b>pink</b> for topics (ransomware, zero-day, phishing…), <b>lavender</b> for vendors and products, and <b>mint</b> for the source's own labels. Click a tag to search for it.</p>
+    </div>
+  </div>
+</dialog>
+
 <dialog id="dlg" aria-labelledby="dtitle">
   <div class="dwrap">
     <div class="dhead">
       <div><h2 id="dtitle"></h2><p id="ddesc"></p></div>
       <span id="dcount" class="dcount"></span>
-      <button type="button" id="dclose" aria-label="Close feed">✕</button>
+      <button type="button" class="xbtn" id="dclose" aria-label="Close feed">✕</button>
+    </div>
+    <div class="dsort" role="group" aria-label="Sort items">
+      <span>Sort by</span>
+      <button type="button" class="sortbtn" data-sort="date" aria-pressed="true">Date</button>
+      <button type="button" class="sortbtn" data-sort="sev" aria-pressed="false">Severity</button>
     </div>
     <div class="dgrid" id="dgrid"></div>
   </div>
 </dialog>
 
 <footer>
-  <p>Feeds come from CISA, CERT/CC, the UK NCSC, CERT-EU, the Canadian Centre for Cyber Security, CVE.report, cvefeed.io, Kubernetes, Google News, Zero Day Initiative, Exploit-DB, Full Disclosure, Sploitus, VulDB and Fortinet (FortiGuard Labs and support), saved by a scheduled job. Severity is estimated from keywords, since RSS doesn't provide it.</p>
+  <p>Feeds come from CISA, CERT/CC, the UK NCSC, CERT-EU, the Canadian Centre for Cyber Security, Microsoft (Security Update Guide and Security Blog), Hacker News, CVE.report, cvefeed.io, Kubernetes, Google News, Zero Day Initiative, Exploit-DB, Full Disclosure, Sploitus, VulDB and Fortinet (FortiGuard Labs and support), saved by a scheduled job. Severity and tags are estimated from keywords, since RSS doesn't provide them.</p>
   <p id="updated"></p>
   <p>© Big Frog ∞ 1998 — stay patched.</p>
 </footer>
+<script src="js/balatro.js"></script>
 <script src="js/app.js"></script>
+<script src="js/ago.js"></script>
 </body>
 </html>

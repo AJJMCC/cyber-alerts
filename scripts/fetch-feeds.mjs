@@ -2,12 +2,19 @@
 // Run with Node 18+:  node scripts/fetch-feeds.mjs
 // No dependencies. Add more feeds to SOURCES (names must match LIVE in js/app.js).
 // Rolling window: each run merges new items into the saved ones and drops anything older than DAYS.
+// Polite fetching: sends If-None-Match / If-Modified-Since using the validators saved from the last
+// run (stored under "validators" in feed.json). A 304 means "unchanged", so we keep the saved items.
+// Error isolation: each feed is fetched inside its own try/catch. A dead feed logs a warning, keeps its
+// previously saved items, and never stops the other feeds or fails the job.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 const run = promisify(execFile);
 const DAYS = 30;
+const TIMEOUT = 20000;   // ms per request
+const RETRIES = 2;       // extra attempts after the first, for network errors, 408, 429 and 5xx
+const MAX_WAIT = 15000;  // never wait longer than this for a retry (even if Retry-After says so)
 const FG = "https://filestore.fortinet.com/fortiguard/rss/";
 const SOURCES = [
   { name: "CISA ICS Advisories", url: "https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml" },
@@ -16,6 +23,9 @@ const SOURCES = [
   { name: "UK NCSC", url: "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml" },
   { name: "CERT-EU", url: "https://cert.europa.eu/publications/security-advisories-rss" },
   { name: "Canadian Cyber Centre", url: "https://www.cyber.gc.ca/api/cccs/atom/v1/get?feed=alerts_advisories&lang=en" },
+  { name: "Microsoft Security Update Guide", url: "https://api.msrc.microsoft.com/update-guide/rss" },
+  { name: "Microsoft Security Blog", url: "https://www.microsoft.com/security/blog/category/cybersecurity/feed/" },
+  { name: "Hacker News Feed", url: "https://news.ycombinator.com/rss" },
   { name: "CVE.report", url: "https://cve.report/cve.rss" },
   { name: "cvefeed.io Latest", url: "https://cvefeed.io/rssfeed/latest.xml" },
   { name: "cvefeed.io High & Critical", url: "https://cvefeed.io/rssfeed/severity/high.xml" },
@@ -38,22 +48,17 @@ const SOURCES = [
   { name: "IPS Updates", url: FG + "ipsdatabase.xml" },
   { name: "Web Filtering Updates", url: FG + "webfiltering.xml" },
   { name: "FortiWeb Security Updates", url: FG + "websecurity.xml" },
-  { name: "Mobile AntiVirus Updates", url: FG + "mobile.xml" },
   { name: "Endpoint Vulnerability Updates", url: FG + "epvuln.xml" },
   { name: "IP Reputation DB", url: FG + "irdb.xml" },
   { name: "Botnet Domain Reputation DB", url: FG + "botnetdom.xml" },
-  { name: "Internet Services DB", url: FG + "isdb.xml" },
-  { name: "OT Security Services", url: FG + "indsec.xml" },
-  { name: "IoT Application Services", url: FG + "iotapp.xml" },
-  { name: "OT Application Services", url: FG + "otapp.xml" },
-  { name: "OT IPS Services", url: FG + "otips.xml" },
   { name: "Virtual Patching Updates", url: FG + "fmwp.xml" },
   { name: "FortiDAST", url: FG + "fortidast.xml" },
   { name: "Fortinet Firmware Updates", url: "https://support.fortinet.com/rss/firmware.xml" },
 ];
 const CONCURRENCY = 4;
 const OUT = "feeds/feed.json";
-const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
+// Browser-style prefix (some sources block unknown agents) plus a friendly note for whoever reads their logs.
+const UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 (Thankyou from big frog <3)";
 const HEADERS = {
   "User-Agent": UA,
   "Accept": "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5",
@@ -123,29 +128,59 @@ function merge(old = [], fresh) {
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const why = (e) => e.message + (e.cause ? ` (${e.cause.code || e.cause.message})` : "");
+const why = (e) => (e?.message || String(e)) + (e?.cause ? ` (${e.cause.code || e.cause.message})` : "");
 
-// Route 1: Node's built-in fetch.
-async function viaFetch(url) {
-  const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(20000) });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.text();
+// Seconds or HTTP-date in Retry-After -> milliseconds (0 if absent or unreadable).
+function retryAfter(res) {
+  const v = res.headers.get("retry-after");
+  if (!v) return 0;
+  const ms = /^\d+$/.test(v) ? +v * 1000 : Date.parse(v) - Date.now();
+  return isNaN(ms) ? 0 : Math.max(0, ms);
 }
-// Route 2: curl (different TLS fingerprint, HTTP/2, follows redirects).
+
+// Route 1: Node's built-in fetch, with conditional headers when we have validators.
+// Returns { notModified: true } on 304, or { xml, validator } on 200.
+async function viaFetch(url, v) {
+  const headers = { ...HEADERS };
+  if (v?.etag) headers["If-None-Match"] = v.etag;
+  if (v?.lastModified) headers["If-Modified-Since"] = v.lastModified;
+  const res = await fetch(url, { headers, signal: AbortSignal.timeout(TIMEOUT) });
+  if (res.status === 304) return { notModified: true };
+  if (!res.ok) {
+    const e = new Error(`HTTP ${res.status}`);
+    e.retryable = res.status === 408 || res.status === 429 || res.status >= 500;
+    e.wait = retryAfter(res);
+    throw e;
+  }
+  return {
+    xml: await res.text(),
+    validator: { etag: res.headers.get("etag") || undefined, lastModified: res.headers.get("last-modified") || undefined },
+  };
+}
+// Route 2 (fallback): curl has a different TLS fingerprint, uses HTTP/2 and follows redirects.
+// Always a full download, so it returns no validators.
 async function viaCurl(url) {
   const args = ["-sSL", "--compressed", "--max-time", "25", "--fail", "-A", UA];
-  for (const [k, v] of Object.entries(HEADERS)) if (k !== "User-Agent") args.push("-H", `${k}: ${v}`);
+  for (const [k, val] of Object.entries(HEADERS)) if (k !== "User-Agent") args.push("-H", `${k}: ${val}`);
   const { stdout } = await run("curl", [...args, url], { maxBuffer: 20e6 });
-  return stdout;
+  return { xml: stdout };
 }
 
-async function get(name, url) {
-  const routes = [["fetch", viaFetch], ["curl", viaCurl]];
-  for (let round = 0; round < 2; round++) {
-    for (const [label, fn] of routes) {
-      try { return parse(await fn(url)); }
-      catch (e) { console.error(`  ${name} / ${label} attempt ${round + 1}: ${why(e)}`); }
-      await sleep(2000 + Math.random() * 2000); // human-ish pacing
+// Try fetch (with retries and backoff), then curl (same). Returns { items, validator, notModified }.
+async function get(name, url, validator) {
+  const routes = [["fetch", (u) => viaFetch(u, validator)], ["curl", viaCurl]];
+  for (const [label, fn] of routes) {
+    for (let attempt = 0; attempt <= RETRIES; attempt++) {
+      try {
+        const r = await fn(url);
+        if (r.notModified) return { notModified: true, validator };
+        return { items: parse(r.xml), validator: r.validator };
+      } catch (e) {
+        const last = attempt === RETRIES || e.retryable === false;
+        console.error(`  ${name} / ${label} attempt ${attempt + 1}: ${why(e)}${last ? "" : " (retrying)"}`);
+        if (last) break; // give up on this route (e.g. 403/404), try the next one
+        await sleep(Math.min(MAX_WAIT, e.wait || 1500 * 2 ** attempt) + Math.random() * 1000);
+      }
     }
   }
   throw new Error("all routes failed");
@@ -155,26 +190,51 @@ let previous = { sources: {} };
 try { previous = JSON.parse(await readFile(OUT, "utf8")); } catch {}
 
 // Start from the saved copy of current sources (removed feeds are dropped), trimmed to the window.
+// A feed that fails below simply keeps this saved copy, so its column doesn't vanish from the page.
 const sources = {};
-for (const s of SOURCES) if (previous.sources?.[s.name]) sources[s.name] = merge(previous.sources[s.name], []);
-let ok = 0;
+const validators = {};
+for (const s of SOURCES) {
+  try {
+    if (previous.sources?.[s.name]) sources[s.name] = merge(previous.sources[s.name], []);
+    if (previous.validators?.[s.name]) validators[s.name] = previous.validators[s.name];
+  } catch (e) {
+    console.error(`::warning::Saved data for ${s.name} was unreadable and was dropped: ${why(e)}`);
+  }
+}
+let ok = 0, unchanged = 0;
+const failed = [];
 const queue = [...SOURCES];
 async function worker() {
   while (queue.length) {
     const s = queue.shift();
     try {
-      const fresh = await get(s.name, s.url);
-      sources[s.name] = merge(previous.sources?.[s.name], fresh);
+      // Only send validators if we hold a saved copy to fall back on.
+      const v = previous.sources?.[s.name] ? previous.validators?.[s.name] : undefined;
+      const r = await get(s.name, s.url, v);
+      if (r.notModified) {
+        ok++; unchanged++;
+        console.log(`304  ${s.name}: not modified, ${sources[s.name]?.length ?? 0} kept`);
+        continue;
+      }
+      const merged = merge(previous.sources?.[s.name], r.items);
+      // Commit results only after everything for this feed has worked.
+      sources[s.name] = merged;
+      if (r.validator?.etag || r.validator?.lastModified) validators[s.name] = r.validator;
+      else delete validators[s.name];
       ok++;
-      console.log(`ok   ${s.name}: ${fresh.length} fetched, ${sources[s.name].length} kept from the last ${DAYS} days`);
+      console.log(`ok   ${s.name}: ${r.items.length} fetched, ${merged.length} kept from the last ${DAYS} days`);
     } catch (e) {
-      console.error(`FAIL ${s.name}: ${why(e)}`);
+      // One dead URL must never fail the whole refresh: warn (shows as an annotation in GitHub Actions) and move on.
+      failed.push(s.name);
+      const kept = sources[s.name]?.length;
+      console.error(`::warning title=Feed failed::${s.name}: ${why(e)}${kept ? ` (keeping ${kept} saved items)` : " (no saved items)"}`);
     }
   }
 }
 await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 
 if (ok === 0 && SOURCES.length) {
+  // Every feed failed, which usually means a network problem rather than dead feeds. Keep the old file.
   console.error("No feeds fetched; leaving existing file untouched.");
   process.exit(1);
 }
@@ -182,5 +242,6 @@ if (ok === 0 && SOURCES.length) {
 const ordered = {};
 for (const s of SOURCES) if (sources[s.name]) ordered[s.name] = sources[s.name];
 await mkdir("feeds", { recursive: true });
-await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), days: DAYS, sources: ordered }, null, 1));
-console.log(`Done: ${ok}/${SOURCES.length} feeds fetched.`);
+await writeFile(OUT, JSON.stringify({ updated: new Date().toISOString(), days: DAYS, validators, sources: ordered }, null, 1));
+console.log(`Done: ${ok}/${SOURCES.length} feeds checked (${unchanged} not modified, ${ok - unchanged} downloaded, ${failed.length} failed).`);
+if (failed.length) console.log(`Failed feeds: ${failed.join(", ")}`);
